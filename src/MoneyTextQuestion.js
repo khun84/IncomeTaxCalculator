@@ -29,7 +29,7 @@ function NumberFormatCustom(props) {
 //   };
 
 
-export default function TextQuestion() {
+export default function MoneyTextQuestion(props) {
 
     const [values, setValues] = React.useState({
         numberformat: '',
@@ -43,11 +43,11 @@ export default function TextQuestion() {
       };
 
         return (
-            <div className="horizontalRow">  
+            <div className="horizontalRow ">  
 
-                <div className="questionText">
-                    <h4> Estimate your Gross Annual Income </h4>
-                    <div className="subtitles">includes bonuses and dividends before any deductions</div>
+                <div className="questionText question-bottom-border">
+                    <h4>{props.questionTitle} </h4>
+                    <div className="subtitles">{props.questionSubtitle}</div>
                 </div>
                 
                 <div className="questionIcon"><img src="assets/dollar.svg"></img> </div>
@@ -55,7 +55,7 @@ export default function TextQuestion() {
                 <div className="incomeInput">
                 <TextField
                     fullWidth
-                    label="Gross Income"
+                    label={props.label}
                     variant="outlined"
                     value={values.numberformat}
                     onChange={handleChange('numberformat')}
@@ -65,8 +65,7 @@ export default function TextQuestion() {
                     }}
                 />
                 </div>
-                
-            
+              
             </div>
           
         );

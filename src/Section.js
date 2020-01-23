@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import HeaderSection from './HeaderSection';
-import TextQuestion from './TextQuestion';
+import MoneyTextQuestion from './MoneyTextQuestion';
 
 export default class Section extends Component {
 
@@ -8,8 +8,17 @@ export default class Section extends Component {
         return (
             <div className="section">
                 <HeaderSection />
-                <div></div>
-                <TextQuestion />
+
+                <MoneyTextQuestion 
+                questionTitle="Estimate your Gross Annual Income" 
+                questionSubtitle="includes bonuses and allowances before any deductions"
+                label="Gross Income"/>
+
+                <MoneyTextQuestion 
+                questionTitle="Estimate your Other Income" 
+                questionSubtitle="includes taxable dividends, rent and business income"
+                label="Total Other Income"/>
+
             </div>
           
         );

@@ -1,14 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class HeaderSection extends Component {
+export default function IncomeSection(props) {
 
-    render() {
         return (
             <div className="headerSection b-border">
                 <h3>Income <span className="spacing"></span><img src="assets/dollar.svg"></img></h3>
             </div>
           
         );
-    }
   
   }
