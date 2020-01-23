@@ -7,7 +7,7 @@ function returnIcon(title) {
         )
     } else if (title === "Individial Tax Relief") {
         return (
-            <div className="inline-block    ">
+            <div className="inline-block">
                 <img className="headerIcons" src="assets/tax.svg"></img>
                 <img className="headerIcons" src="assets/one.svg"></img>
             </div>

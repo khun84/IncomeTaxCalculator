@@ -4,6 +4,7 @@
 .parentApp {
     text-align: center;
     width: 100%;
+    margin-bottom: 100px;
 }
 
 .main-header {
@@ -134,7 +135,11 @@
 }
 
 @media (max-width: 1280px)  {
-    .questionContainer {
+    .questionContainer  {
+        min-width: 100%;
+    }
+
+    .questionContainerSubsequent {
         min-width: 100%;
     }
 }
