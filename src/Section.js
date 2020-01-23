@@ -8,6 +8,7 @@ export default class Section extends Component {
         return (
             <div className="section">
                 <HeaderSection />
+                <div></div>
                 <TextQuestion />
             </div>
           

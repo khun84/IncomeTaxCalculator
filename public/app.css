@@ -26,6 +26,10 @@
     vertical-align: middle;
 }
 
+.entireQuestionContainer {
+    padding: 0px 20px;
+}
+
 .spacing {
     padding-left: 10px;
     padding-right: 10px;
@@ -132,4 +136,16 @@
     .questionIcon {
         display: none;
     }
+}
+
+@media (max-width: 470px)  {
+    .headerDiv h1 {
+        font-size: 30px;
+     }  
+}
+
+@media (max-width: 330px)  {
+    .headerDiv h1 {
+        font-size: 24px;
+     }  
 }
