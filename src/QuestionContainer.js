@@ -5,8 +5,19 @@ export default class QuestionContainer extends Component {
 
     render() {
         return (
-            <div className="questionContainer">
-                <Section />
+            <div >
+
+                <div className="questionContainer">
+                <Section title="Income"/>
+                </div>
+                
+                <div className="questionContainerSubsequent">
+                <Section title="Tax Relief"/>
+                
+                </div>
+
+                
+
             </div>
           
         );
