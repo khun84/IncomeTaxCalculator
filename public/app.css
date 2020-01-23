@@ -1,0 +1,111 @@
+/* Fonts */
+@import url(//fonts.googleapis.com/css?family=Fjalla+One);
+
+.parentApp {
+    text-align: center;
+    width: 100%;
+}
+
+.main-header {
+    height: 300px;
+    background-color: tan;
+    background-size: cover;
+    color: white;
+  }
+
+.headerSection h3{
+    font-size: 48px;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: start;
+    margin: 40px 0;
+}
+
+.headerSection img {
+    max-width: 40px;
+    max-height: 40px;
+    vertical-align: middle;
+}
+
+.spacing {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.headerDiv h1 {
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    line-height: 200px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 60px;
+}
+
+.questionContainer {
+    max-width: 1280px;
+    min-width: 1280px;
+    min-height: 1000px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 20px 50px;
+    text-align: center;
+    display: inline-block;
+    margin-top: -100px;
+    background-color: white;
+}
+
+
+/* TextQuestion */
+
+.horizontalRow {
+    width: 80%;
+    position: fixed;
+}
+
+.horizontalRow h4{
+    font-size: 24px;
+    margin: 25px 0 0 0;
+}
+
+.questionText {
+    display: inline-block;
+    float: left;
+}
+
+.textQuestionParagraph {
+    font-size: 14px;
+    color: lightgray;
+    margin: 0 0;
+}
+
+.subtitles {
+    font-size: 16px;
+    color: lightgray;
+}
+
+.questionIcon img {
+    width: 20px;
+    height: 20px;
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.questionIcon {
+    display: inline-block;
+    float: left;
+}
+
+.incomeInput {
+    display: inline-block;
+    float: inline-end;
+    margin-top: 20px;
+}
+
+.b-border {
+    border-bottom: 2px solid #dfe2e6;
+}
+
+@media (max-width: 640px)  {
+.headerDiv h1 {
+    font-size: 36px;
+ }
+}
