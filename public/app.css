@@ -14,7 +14,7 @@
   }
 
 .headerSection {
-    margin-bottom: 16x;
+    margin-bottom: 16px;
 }
 
 .headerSection h3{
@@ -27,16 +27,15 @@
 .headerSection img {
     max-width: 40px;
     max-height: 40px;
-    vertical-align: middle;
+    
 }
 
 .entireQuestionContainer {
     padding: 0px 20px;
 }
 
-.spacing {
-    padding-left: 10px;
-    padding-right: 10px;
+.headerIcons {
+    margin-left: 20px;
 }
 
 .headerDiv h1 {
@@ -116,7 +115,6 @@
 
 .questionIcon {
     display: inline-block;
-    /* float: left; */
 }
 
 .incomeInput {
@@ -174,4 +172,9 @@
     .headerDiv h1 {
         font-size: 24px;
      }  
+}
+
+/* General Styles */
+.inline-block {
+    display: inline-block;
 }
