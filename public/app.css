@@ -43,6 +43,7 @@
 .questionContainer {
     max-width: 1280px;
     min-width: 1280px;
+    width: 100%;
     min-height: 1000px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 20px;
@@ -57,8 +58,7 @@
 /* TextQuestion */
 
 .horizontalRow {
-    width: 80%;
-    position: fixed;
+    width: 100%;
 }
 
 .horizontalRow h4{
@@ -96,16 +96,40 @@
 
 .incomeInput {
     display: inline-block;
-    float: inline-end;
+    float: right;
     margin-top: 20px;
+    width: 300px;
 }
 
 .b-border {
     border-bottom: 2px solid #dfe2e6;
 }
 
+@media (max-width: 1280px)  {
+    .questionContainer {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 850px)  {
+    .incomeInput {
+        float: left;
+    }
+}
+
 @media (max-width: 640px)  {
+
 .headerDiv h1 {
     font-size: 36px;
  }
+}
+
+@media (max-width: 540px)  {
+    .questionIcon img{
+        display: none;
+    }
+
+    .questionIcon {
+        display: none;
+    }
 }

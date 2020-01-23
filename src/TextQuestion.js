@@ -18,7 +18,7 @@ function NumberFormatCustom(props) {
         }}
         thousandSeparator
         isNumericString
-        prefix="RM"
+        prefix="RM "
       />
     );
   }
@@ -54,7 +54,9 @@ export default function TextQuestion() {
 
                 <div className="incomeInput">
                 <TextField
-                    label="react-number-format"
+                    fullWidth
+                    label="Gross Income"
+                    variant="outlined"
                     value={values.numberformat}
                     onChange={handleChange('numberformat')}
                     id="formatted-numberformat-input"
