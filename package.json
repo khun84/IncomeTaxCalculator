@@ -1,8 +1,11 @@
 {
+  "homepage": "http://adrianchincm.github.io/IncomeTaxCalculator",
   "name": "create-react-app",
   "version": "4.0.0",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -11,6 +14,7 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "clsx": "latest",
+    "gh-pages": "^2.2.0",
     "react": "latest",
     "react-dom": "latest",
     "react-number-format": "^4.3.1",
