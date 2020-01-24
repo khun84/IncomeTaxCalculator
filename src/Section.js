@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import HeaderSection from './HeaderSection';
 import MoneyTextQuestion from './MoneyTextQuestion';
+import CheckboxQuestion from './CheckboxQuestion';
 
 const incomeQuestionIcons = (
     <div className="questionIcon"><img src="assets/dollar.svg"></img> </div>
@@ -56,6 +57,13 @@ const taxReliefQuestions = (
     questionSubtitle="Degree, Masters or PhD level"
     cap="(capped at RM 7,000)"
     label="Education fees"
+    icons={individualReliefQuestionIcons}/>
+
+    <CheckboxQuestion 
+    questionTitle="Are you a disabled individual?" 
+    questionSubtitle=""
+    cap="(fixed at RM 6,000)"
+    label={["Yes","No"]}
     icons={individualReliefQuestionIcons}/>
     </div>
 )
