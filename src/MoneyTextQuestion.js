@@ -47,7 +47,13 @@ export default function MoneyTextQuestion(props) {
 
                 <div className="questionText question-bottom-border">
                     <h4>{props.questionTitle}  {props.icons}</h4>
-                    <div className="subtitles">{props.questionSubtitle}</div>
+                    <div className="subtitles">
+                      {props.questionSubtitle}
+                      &nbsp;
+                        <div className="capText">
+                          {props.cap}
+                        </div>
+                      </div>
                 </div>
                 
                

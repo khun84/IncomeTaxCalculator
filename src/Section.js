@@ -33,13 +33,29 @@ const taxReliefQuestions = (
     <MoneyTextQuestion 
     questionTitle="Life Insurance Premiums" 
     questionSubtitle="total paid for the year"
+    cap="(capped at RM 3,000)"
     label="Life Insurance Premiums"
     icons={individualReliefQuestionIcons}/>
 
     <MoneyTextQuestion 
     questionTitle="Medical Insurance Premium" 
     questionSubtitle="total paid for the year"
+    cap="(capped at RM 500)"
     label="Medical Insurance Premiums"
+    icons={individualReliefQuestionIcons}/>
+    
+    <MoneyTextQuestion 
+    questionTitle="Lifestyle Expenses" 
+    questionSubtitle="Books and magazines, PC or smartphone, sports equipment or gym membership, internet subscription"
+    cap="(capped at RM 2,500)"
+    label="Lifestyle Expenses"
+    icons={individualReliefQuestionIcons}/>
+
+    <MoneyTextQuestion 
+    questionTitle="Education fees" 
+    questionSubtitle="Degree, Masters or PhD level"
+    cap="(capped at RM 7,000)"
+    label="Education fees"
     icons={individualReliefQuestionIcons}/>
     </div>
 )

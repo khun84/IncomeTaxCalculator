@@ -12,7 +12,7 @@ export default class QuestionContainer extends Component {
                 </div>
                 
                 <div className="questionContainerSubsequent">
-                <Section title="Individial Tax Relief"/>
+                <Section title="Individual Tax Relief"/>
                 
                 </div>
 
