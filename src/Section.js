@@ -85,20 +85,36 @@ function getQuestionIcons(title) {
         return individualReliefQuestionIcons
     }
 }
+ 
 
-export default function Section (props) {
+  
 
+class Section extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            totalIncome: 1000,
+        };
+    } 
+
+    render() {
         return (
             <div className="section">
                 <HeaderSection
-                title={props.title}
-                icons={getQuestionIcons(props.title)}/>
+                title={this.props.title}
+                icons={getQuestionIcons(this.props.title)}
+                total={this.state.totalIncome}
+                />
 
-                {getQuestions(props.title)}
+                {getQuestions(this.props.title)}
 
             </div>
           
         );
-
+    }
+        
   
   }
+
+  export default Section;

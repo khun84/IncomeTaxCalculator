@@ -14,8 +14,11 @@
     color: white;
   }
 
+/* header section */
+
 .headerSection {
     margin-bottom: 16px;
+    overflow: hidden;
 }
 
 .headerSection h3{
@@ -29,6 +32,14 @@
     max-width: 40px;
     max-height: 40px;
     
+}
+
+.total {
+    float: right;
+}
+
+.total h6 {
+    margin: 0;
 }
 
 .entireQuestionContainer {

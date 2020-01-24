@@ -15,13 +15,30 @@ function returnIcon(title) {
     }
 }
 
+function getSectionType(title) {
+    if (title === "Income") {
+        return "Total Income : "
+    } else if (title === "Individual Tax Relief") {
+        return "Total Relief : "
+    }
+}
+
 export default function IncomeSection(props) {
 
         return (
             <div className="headerSection b-border">
                 <h3>{props.title}
                 {returnIcon(props.title)}
+                <div className="total">
+                        <h6>
+                            {getSectionType(props.title)}
+                            {props.total}
+                        </h6>
+                    </div>
                 </h3>
+
+                
+
             </div>
           
         );
