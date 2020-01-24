@@ -38,8 +38,10 @@ export default function MoneyTextQuestion(props) {
     const handleChange = name => event => {
         setValues({
           ...values,
-          [name]: event.target.value,
+          [name]: event.target.value, 
         });
+
+        props.total(Number(event.target.value))
       };
 
         return (
