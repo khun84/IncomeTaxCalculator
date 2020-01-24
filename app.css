@@ -1,0 +1,185 @@
+/* Fonts */
+@import url(//fonts.googleapis.com/css?family=Fjalla+One);
+
+.parentApp {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.main-header {
+    height: 300px;
+    background-color: tan;
+    background-size: cover;
+    color: white;
+  }
+
+.headerSection {
+    margin-bottom: 16px;
+}
+
+.headerSection h3{
+    font-size: 48px;
+    font-family: 'Fjalla One', sans-serif;
+    text-align: start;
+    margin: 40px 0;
+}
+
+.headerSection img {
+    max-width: 40px;
+    max-height: 40px;
+    
+}
+
+.entireQuestionContainer {
+    padding: 0px 20px;
+}
+
+.headerIcons {
+    margin-left: 20px;
+}
+
+.headerDiv h1 {
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    line-height: 200px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 60px;
+}
+
+.questionContainer {
+    max-width: 1280px;
+    min-width: 1280px;
+    width: 100%;
+    height: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 20px 50px;
+    text-align: center;
+    display: inline-block;
+    margin-top: -100px;
+    background-color: white;
+}
+
+.questionContainerSubsequent {
+    max-width: 1280px;
+    min-width: 1280px;
+    width: 100%;
+    height: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 20px 50px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 30px;
+    background-color: white;
+}
+
+
+/* TextQuestion */
+
+.horizontalRow {
+    width: 100%;
+    overflow: auto;
+    margin: 0 0 20px 0;
+}
+
+.horizontalRow h4{
+    font-size: 24px;
+    margin: 25px 0 0 0;
+}
+
+.questionText {
+    display: inline-block;
+    text-align: left;
+    float: left;
+}
+
+.textQuestionParagraph {
+    font-size: 14px;
+    color: lightgray;
+    margin: 0 0;
+}
+
+.subtitles {
+    font-size: 16px;
+    color: #6a6a6a;
+    margin-bottom: 10px;
+}
+
+.questionIcon img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px; 
+}
+
+.questionIcon {
+    display: inline-block;
+}
+
+.incomeInput {
+    display: inline-block;
+    float: right;
+    margin-top: 30px;
+    width: 300px;
+}
+
+.b-border {
+    border-bottom: 2px solid #dfe2e6;
+}
+
+.question-bottom-border {
+    border-bottom: 1px solid #f2f2f2;
+    width: 50%;
+}
+
+@media (max-width: 1280px)  {
+    .questionContainer  {
+        min-width: 100%;
+    }
+
+    .questionContainerSubsequent {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 850px)  {
+    .incomeInput {
+        float: left;
+    }
+}
+
+@media (max-width: 640px)  {
+
+.headerDiv h1 {
+    font-size: 36px;
+ }
+}
+
+@media (max-width: 540px)  {
+    .questionIcon img{
+        display: none;
+    }
+
+    .questionIcon {
+        display: none;
+    }
+}
+
+@media (max-width: 470px)  {
+    .headerDiv h1 {
+        font-size: 30px;
+     }  
+}
+
+@media (max-width: 330px)  {
+    .headerDiv h1 {
+        font-size: 24px;
+     }  
+}
+
+/* General Styles */
+.inline-block {
+    display: inline-block;
+}
