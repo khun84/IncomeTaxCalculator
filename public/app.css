@@ -143,6 +143,12 @@
     font-weight: bold;
 }
 
+/* button */
+
+.viewSummaryButton {
+    margin-top: 40px;
+}
+
 /* border styles */
 
 .b-border {
