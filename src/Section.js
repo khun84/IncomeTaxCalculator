@@ -37,9 +37,17 @@ class Section extends Component {
         }))
     }
 
-    getTotalRelief = (value, id) => {
+    getTotalRelief = (value, id, cap) => {
+        var cappedRelief = 0
+
+        if (value > cap) {
+            cappedRelief = cap
+        } else {
+            cappedRelief = value
+        }
+
         this.setState ( prevState => ({
-            [id]: value,
+            [id]: cappedRelief,
         }))
 
         this.setState ( prevState => ({
@@ -98,7 +106,8 @@ class Section extends Component {
             id="lifeInsuranceRelief" 
             questionTitle="Life Insurance Premiums" 
             questionSubtitle="total paid for the year"
-            cap="(capped at RM 3,000)"
+            capText="(capped at RM 3,000)"
+            cap={3000}
             label="Life Insurance Premiums"
             icons={individualReliefQuestionIcons}
             total={this.getTotalRelief}
@@ -108,7 +117,8 @@ class Section extends Component {
             id="medicalInsuranceRelief"
             questionTitle="Medical Insurance Premium" 
             questionSubtitle="total paid for the year"
-            cap="(capped at RM 500)"
+            capText="(capped at RM 500)"
+            cap={500}
             label="Medical Insurance Premiums"
             icons={individualReliefQuestionIcons}
             total={this.getTotalRelief}/>
@@ -117,7 +127,8 @@ class Section extends Component {
             id="lifestyleRelief"
             questionTitle="Lifestyle Expenses" 
             questionSubtitle="Books and magazines, PC or smartphone, sports equipment or gym membership, internet subscription"
-            cap="(capped at RM 2,500)"
+            capText="(capped at RM 2,500)"
+            cap={2500}
             label="Lifestyle Expenses"
             icons={individualReliefQuestionIcons}
             total={this.getTotalRelief}/>
@@ -126,7 +137,8 @@ class Section extends Component {
             id="educationRelief"
             questionTitle="Education fees" 
             questionSubtitle="Degree, Masters or PhD level"
-            cap="(capped at RM 7,000)"
+            capText="(capped at RM 7,000)"
+            cap={7000}
             label="Education fees"
             icons={individualReliefQuestionIcons}
             total={this.getTotalRelief}/>
@@ -135,7 +147,8 @@ class Section extends Component {
             id="disabledIndividualRelief"
             questionTitle="Are you a disabled individual?" 
             questionSubtitle=""
-            cap="(fixed at RM 6,000)"
+            capText="(fixed at RM 6,000)"
+            cap={6000}
             label={["Yes","No"]}
             icons={individualReliefQuestionIcons}
             total={this.getTotalRelief}/>

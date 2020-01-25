@@ -15,9 +15,13 @@ class CheckboxQuestion extends Component {
     handleChange = name => event => {
           if (name) {
             this.setState({ ...this.state, disabledIndividual: true });      
+            this.props.total(this.props.cap, this.props.id, this.props.cap)
           } else {
             this.setState({ ...this.state, disabledIndividual: false });
+            this.props.total(0, this.props.id, this.props.cap)
           }
+
+          
       };
 
     render()   {
@@ -29,7 +33,7 @@ class CheckboxQuestion extends Component {
                 <div className="subtitles">
                   {this.props.questionSubtitle}
                     <div className="capText">
-                      {this.props.cap}
+                      {this.props.capText}
                     </div>
                   </div>
             </div>

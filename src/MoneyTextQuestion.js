@@ -41,7 +41,7 @@ export default function MoneyTextQuestion(props) {
           [name]: event.target.value, 
         });
 
-        props.total(Number(event.target.value), props.id)
+        props.total(Number(event.target.value), props.id, props.cap)
       };
 
         return (
@@ -53,7 +53,7 @@ export default function MoneyTextQuestion(props) {
                       {props.questionSubtitle}
                       &nbsp;
                         <div className="capText">
-                          {props.cap}
+                          {props.capText}
                         </div>
                       </div>
                 </div>
