@@ -36,6 +36,7 @@
 
 .total {
     float: right;
+    color: gray;
 }
 
 .total h6 {
@@ -179,6 +180,11 @@
 .headerDiv h1 {
     font-size: 36px;
  }
+
+
+ .total {
+    float: none;
+}
 }
 
 @media (max-width: 540px)  {
@@ -195,6 +201,7 @@
     .headerDiv h1 {
         font-size: 30px;
      }  
+
 }
 
 @media (max-width: 330px)  {

@@ -32,7 +32,7 @@ export default function IncomeSection(props) {
                 <div className="total">
                         <h6>
                             {getSectionType(props.title)}
-                            {props.total}
+                            RM {props.total}
                         </h6>
                     </div>
                 </h3>
