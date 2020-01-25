@@ -14,25 +14,51 @@ class Section extends Component {
         grossIncome: 0,
         otherIncome: 0,
         totalIncome: 0,
+
+        lifeInsuranceRelief: 0,
+        medicalInsuranceRelief: 0,
+        lifestyleRelief: 0,
+        educationRelief: 0,
+        disabledIndividualRelief: 0,
+        totalIndividualRelief: 0,
     };
 
     getGrossIncome = (value) => {
         this.setState ( prevState => ({
             grossIncome: value,
-            totalIncome: prevState.otherIncome + value,
+            totalIncome: prevState.totalIncome - prevState.grossIncome + value,
         }))
     }
 
     getOtherIncome = (value) => {
         this.setState ( prevState => ({
             otherIncome: value,
-            totalIncome: prevState.grossIncome + value,
+            totalIncome: prevState.totalIncome - prevState.otherIncome + value,
+        }))
+    }
+
+    getTotalRelief = (value, id) => {
+        this.setState ( prevState => ({
+            [id]: value,
+        }))
+
+        this.setState ( prevState => ({
+            totalIndividualRelief: prevState.lifeInsuranceRelief + prevState.medicalInsuranceRelief + prevState.lifestyleRelief +
+                                    prevState.educationRelief + prevState.disabledIndividualRelief
         }))
     }
 
     constructor(props) {
         super(props);
     } 
+
+    getTotalAmount = (title)  => {
+        if (title === "Income") {
+         return this.state.totalIncome
+        } else if (title === "Individual Tax Relief"){
+         return this.state.totalIndividualRelief
+        }
+    }
 
     render() {
 
@@ -68,49 +94,58 @@ class Section extends Component {
             <div>
             {/* TODO make EPF question that auto calculate from gross income */}
         
-            <MoneyTextQuestion 
+            <MoneyTextQuestion
+            id="lifeInsuranceRelief" 
             questionTitle="Life Insurance Premiums" 
             questionSubtitle="total paid for the year"
             cap="(capped at RM 3,000)"
             label="Life Insurance Premiums"
-            icons={individualReliefQuestionIcons}/>
+            icons={individualReliefQuestionIcons}
+            total={this.getTotalRelief}
+            />
         
             <MoneyTextQuestion 
+            id="medicalInsuranceRelief"
             questionTitle="Medical Insurance Premium" 
             questionSubtitle="total paid for the year"
             cap="(capped at RM 500)"
             label="Medical Insurance Premiums"
-            icons={individualReliefQuestionIcons}/>
+            icons={individualReliefQuestionIcons}
+            total={this.getTotalRelief}/>
             
             <MoneyTextQuestion 
+            id="lifestyleRelief"
             questionTitle="Lifestyle Expenses" 
             questionSubtitle="Books and magazines, PC or smartphone, sports equipment or gym membership, internet subscription"
             cap="(capped at RM 2,500)"
             label="Lifestyle Expenses"
-            icons={individualReliefQuestionIcons}/>
+            icons={individualReliefQuestionIcons}
+            total={this.getTotalRelief}/>
         
             <MoneyTextQuestion 
+            id="educationRelief"
             questionTitle="Education fees" 
             questionSubtitle="Degree, Masters or PhD level"
             cap="(capped at RM 7,000)"
             label="Education fees"
-            icons={individualReliefQuestionIcons}/>
+            icons={individualReliefQuestionIcons}
+            total={this.getTotalRelief}/>
         
             <CheckboxQuestion 
+            id="disabledIndividualRelief"
             questionTitle="Are you a disabled individual?" 
             questionSubtitle=""
             cap="(fixed at RM 6,000)"
             label={["Yes","No"]}
-            icons={individualReliefQuestionIcons}/>
+            icons={individualReliefQuestionIcons}
+            total={this.getTotalRelief}/>
             </div>
         )
-        
-        
         
         function getQuestions(title) {
             if (title === "Income") {
                 return incomeQuestions
-            } else {
+            } else if (title === "Individual Tax Relief") {
                 return taxReliefQuestions
             }
         }
@@ -123,14 +158,14 @@ class Section extends Component {
             }
         }
     
-       
+        
 
         return (
             <div className="section">
                 <HeaderSection
                 title={this.props.title}
                 icons={getQuestionIcons(this.props.title)}
-                total={this.state.totalIncome}
+                total={this.getTotalAmount(this.props.title)}
                 />
 
                 {getQuestions(this.props.title)}

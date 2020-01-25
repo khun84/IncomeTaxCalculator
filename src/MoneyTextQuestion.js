@@ -41,7 +41,7 @@ export default function MoneyTextQuestion(props) {
           [name]: event.target.value, 
         });
 
-        props.total(Number(event.target.value))
+        props.total(Number(event.target.value), props.id)
       };
 
         return (
