@@ -14,8 +14,11 @@
     color: white;
   }
 
+/* header section */
+
 .headerSection {
     margin-bottom: 16px;
+    overflow: hidden;
 }
 
 .headerSection h3{
@@ -29,6 +32,15 @@
     max-width: 40px;
     max-height: 40px;
     
+}
+
+.total {
+    float: right;
+    color: gray;
+}
+
+.total h6 {
+    margin: 0;
 }
 
 .entireQuestionContainer {
@@ -168,6 +180,11 @@
 .headerDiv h1 {
     font-size: 36px;
  }
+
+
+ .total {
+    float: none;
+}
 }
 
 @media (max-width: 540px)  {
@@ -184,6 +201,7 @@
     .headerDiv h1 {
         font-size: 30px;
      }  
+
 }
 
 @media (max-width: 330px)  {
