@@ -101,8 +101,6 @@ class ParentApp extends Component {
                  selfDependent={this.state.selfDependent}
                  />
             }
-           
-            <h1>{this.state.totalIncome}</h1>
 
             </div>
                 
