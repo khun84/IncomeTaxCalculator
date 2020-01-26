@@ -20,6 +20,9 @@ class ParentApp extends Component {
         educationRelief: 0,
         disabledIndividualRelief: 0,
         totalIndividualRelief: 0,
+
+        epfAndSocso: 4250,
+        selfDependent: 9000,
     }
 
     getGrossIncome = (value, id, cap) => {
@@ -87,7 +90,16 @@ class ParentApp extends Component {
             //     <Button variant="contained" color="primary" size="large" startIcon={<MonetizationOnIcon />} onClick={this.showSummarySection}>
             //     View Summary
             // </Button> 
-            <Summary />
+            <Summary
+                 totalIncome={this.state.totalIncome}
+         
+                 lifeAndMedical= {this.state.lifeInsuranceRelief + this.state.medicalInsuranceRelief}
+                 lifestyleAndEducation = {this.state.lifestyleRelief + this.state.educationRelief}
+                 disabled= {this.state.disabledIndividualRelief}
+                 totalTaxRelief={this.state.totalIndividualRelief + this.state.epfAndSocso + this.state.selfDependent}
+                 epfAndSocso={this.state.epfAndSocso}
+                 selfDependent={this.state.selfDependent}
+                 />
             }
            
             <h1>{this.state.totalIncome}</h1>
