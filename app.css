@@ -74,7 +74,7 @@
     background-color: white;
 }
 
-.questionContainerSubsequent {
+.questionContainerSubsequent{
     max-width: 1280px;
     min-width: 1280px;
     width: 100%;
@@ -88,6 +88,39 @@
     background-color: white;
 }
 
+/* summary section */
+
+.summarySection{
+    max-width: 1280px;
+    min-width: 1280px;
+    width: 100%;
+    height: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 20px 50px;
+    text-align: center;
+    display: inline-block;
+    /* margin-top: 30px; */
+    background-color: #556cd6;
+}
+
+.summarySection h3 {
+    font-size: 48px;
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    text-align: start;
+    margin: 40px 0;
+    padding-bottom: 20px;   
+    border-bottom: 2px solid #dfe2e6;
+}
+
+.breakdown h4 {
+    font-size: 30px;
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    text-align: start;
+    margin-bottom: 16px;   
+}
 
 /* TextQuestion */
 
@@ -143,6 +176,54 @@
     font-weight: bold;
 }
 
+/* unordered list */
+
+.listContainer {
+    width: 500px;
+    float: left;
+}
+
+ul {
+    padding: 0;
+}
+
+.unorderedList {
+    list-style-type: none;
+    padding: 0;
+    color: white;
+}
+
+.unorderedList h6 {
+    margin: 0;
+    margin-block-end: 0em;
+    margin-block-start: 0em;
+}
+
+.listItem {
+    width: 100%;
+    display: table;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.listItemTitle {
+    display: table-cell;
+    text-align: left;
+    font-size: 20px;
+}
+
+.listItemAmount {
+    display: table-cell;
+    font-size: 20px;
+    text-align: right;
+}
+
+/* button */
+
+.viewSummaryButton {
+    margin-top: 40px;
+}
+
 /* border styles */
 
 .b-border {
@@ -155,12 +236,17 @@
     margin: 0;
 }
 
+.summaryBorder {
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 1280px)  {
-    .questionContainer  {
+    .questionContainer, .summarySection, .questionContainerSubsequent  {
         min-width: 100%;
     }
 
-    .questionContainerSubsequent {
+    .listContainer {
         min-width: 100%;
     }
 }
@@ -184,7 +270,35 @@
 
  .total {
     float: none;
+    }
 }
+
+@media (max-width: 570px)  {
+    .listContainer {
+        width: 500px;
+        float: none;
+    }
+
+    .listItem {
+        width: fit-content;
+        display: block;
+        float: inherit;
+        padding-bottom: 10px;
+    }
+
+    .listItemAmount {
+        display: block;
+        float: inline-start;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .listItemAmount {
+        display: block;
+        float: inline-start;
+        font-size: 20px;
+        text-align: left;
+    }
 }
 
 @media (max-width: 540px)  {
