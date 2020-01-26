@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import NumberFormat from 'react-number-format';
+
 
 class Summary extends Component {
 
@@ -18,7 +20,9 @@ class Summary extends Component {
                         <ul className="unorderedList">
                             <li className="listItem summaryBorder">
                                 <h6 className="listItemTitle">Total income before deductions : </h6>
-                                <span className="listItemAmount">RM {this.props.totalIncome}</span>
+                                <span className="listItemAmount">
+                                    <NumberFormat value={this.props.totalIncome} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                </span>
                             </li>
 
                             <li className="listItem">
@@ -27,32 +31,44 @@ class Summary extends Component {
 
                             <li className="listItem">
                                 <span className="listItemTitle">Individual dependent relief</span>
-                                <span className="listItemAmount">RM {this.props.selfDependent}</span>
+                                <span className="listItemAmount">
+                                    <NumberFormat value={this.props.selfDependent} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                </span>
                             </li>
 
                             <li className="listItem">
                                 <span className="listItemTitle">EPF & SOCSO</span>
-                                <span className="listItemAmount">RM {this.props.epfAndSocso}</span>
+                                <span className="listItemAmount">
+                                    <NumberFormat value={this.props.epfAndSocso} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                </span>
                             </li>
 
                             <li className="listItem">
                                 <span className="listItemTitle">Life & Medical Insurance</span>
-                                <span className="listItemAmount">RM {this.props.lifeAndMedical}</span>
+                                <span className="listItemAmount">
+                                    <NumberFormat value={this.props.lifeAndMedical} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                </span>
                             </li>
 
                             <li className="listItem">
                                 <span className="listItemTitle">Lifestyle & Education</span>
-                                <span className="listItemAmount">RM {this.props.lifestyleAndEducation}</span>
+                                <span className="listItemAmount">
+                                    <NumberFormat value={this.props.lifestyleAndEducation} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                 </span>
                             </li>
 
                             <li className="listItem summaryBorder">
                                 <span className="listItemTitle">Disabled Individual</span>
-                                <span className="listItemAmount">RM {this.props.disabled}</span>
+                                <span className="listItemAmount">
+                                    <NumberFormat value={this.props.disabled} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                </span>
                             </li>
 
                             <li className="listItem">
                             <h6 className="listItemTitle">Total tax relief deductions : </h6>
-                            <span className="listItemAmount">RM {this.props.totalTaxRelief}</span>
+                            <span className="listItemAmount">
+                                <NumberFormat value={this.props.totalTaxRelief} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                            </span>
                             </li>
                         </ul>
                     </div>
