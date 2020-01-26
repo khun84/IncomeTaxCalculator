@@ -3,8 +3,19 @@ import Header from './Header';
 import QuestionContainer from './QuestionContainer';
 import Button from '@material-ui/core/Button';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import Summary from './Summary';
 
-export default class ParentApp extends Component {
+class ParentApp extends Component {
+
+    state = {
+        showSummary: false,
+    }
+
+    showSummarySection = () => {
+        this.setState ({
+            showSummary: true
+        })
+    }
 
     render() {
         return (
@@ -13,9 +24,14 @@ export default class ParentApp extends Component {
             <QuestionContainer />
 
             <div className="viewSummaryButton">
-            <Button variant="contained" color="primary" size="large" startIcon={<MonetizationOnIcon />}>
+                {this.state.showSummary ?
+                //  <Summary />
+                null
+                  : 
+                <Button variant="contained" color="primary" size="large" startIcon={<MonetizationOnIcon />} onClick={this.showSummarySection}>
                 View Summary
-            </Button>
+            </Button> }
+           
             </div>
                 
             </div> 
@@ -23,3 +39,5 @@ export default class ParentApp extends Component {
     }
   
   }
+
+  export default ParentApp;
