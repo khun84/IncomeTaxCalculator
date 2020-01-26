@@ -5,53 +5,6 @@ import CheckboxQuestion from './CheckboxQuestion';
 
 class Section extends Component {
 
-    // state = {
-    //     grossIncome: 0,
-    //     otherIncome: 0,
-    //     totalIncome: 0,
-
-    //     lifeInsuranceRelief: 0,
-    //     medicalInsuranceRelief: 0,
-    //     lifestyleRelief: 0,
-    //     educationRelief: 0,
-    //     disabledIndividualRelief: 0,
-    //     totalIndividualRelief: 0,
-    // };
-
-    // getGrossIncome = (value, id, cap) => {
-    //     this.setState ( prevState => ({
-    //         grossIncome: value,
-    //         totalIncome: prevState.totalIncome - prevState.grossIncome + value,
-    //     }))
-    // }
-
-    // getOtherIncome = (value, id, cap) => {
-    //     this.setState ( prevState => ({
-    //         otherIncome: value,
-    //         totalIncome: prevState.totalIncome - prevState.otherIncome + value,
-    //     }))
-    // }
-
-    // getTotalRelief = (value, id, cap) => {
-    //     var cappedRelief = 0
-
-    //     if (value > cap) {
-    //         cappedRelief = cap
-    //     } else {
-    //         cappedRelief = value
-    //     }
-
-    //     this.setState ( prevState => ({
-    //         [id]: cappedRelief,
-    //     }))
-
-    //     this.setState ( prevState => ({
-    //         totalIndividualRelief: prevState.lifeInsuranceRelief + prevState.medicalInsuranceRelief + prevState.lifestyleRelief +
-    //                                 prevState.educationRelief + prevState.disabledIndividualRelief
-    //     }))
-        
-    // }
-
     constructor(props) {
         super(props);
     } 

@@ -82,12 +82,13 @@ class ParentApp extends Component {
 
             <div className="viewSummaryButton">
                 {this.state.showSummary ?
-                //  <Summary />
-                null
+                 <Summary />
                   : 
-                <Button variant="contained" color="primary" size="large" startIcon={<MonetizationOnIcon />} onClick={this.showSummarySection}>
-                View Summary
-            </Button> }
+            //     <Button variant="contained" color="primary" size="large" startIcon={<MonetizationOnIcon />} onClick={this.showSummarySection}>
+            //     View Summary
+            // </Button> 
+            <Summary />
+            }
            
             <h1>{this.state.totalIncome}</h1>
 
