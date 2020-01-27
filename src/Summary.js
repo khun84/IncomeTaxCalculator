@@ -4,6 +4,35 @@ import NumberFormat from 'react-number-format';
 
 class Summary extends Component {
 
+    getTaxAmount = (incomeTaxable) => {
+        console.log("income " + incomeTaxable)
+        if (incomeTaxable > 0 && incomeTaxable <= 5000) {
+            return 0;
+        } else if (incomeTaxable > 5000 && incomeTaxable <= 20000) {
+            return (0.01 * incomeTaxable).toFixed(2);
+        } else if (incomeTaxable > 20000 && incomeTaxable <= 35000) {
+            return (150 + (0.03 * (incomeTaxable-20000))).toFixed(2);
+        } else if (incomeTaxable > 35000 && incomeTaxable <= 50000) {
+            return (600 + (0.08 * (incomeTaxable-35000))).toFixed(2);
+        } else if (incomeTaxable > 50000 && incomeTaxable <= 70000) {
+            return (1800 + (0.14 * (incomeTaxable-50000))).toFixed(2);
+        } else if (incomeTaxable > 70000 && incomeTaxable <= 100000) {
+            return (4600 + (0.21 * (incomeTaxable-70000))).toFixed(2);
+        } else if (incomeTaxable > 100000 && incomeTaxable <= 250000) {
+            return (10900 + (0.24 * (incomeTaxable-100000))).toFixed(2);
+        } else if (incomeTaxable > 250000 && incomeTaxable <= 400000) {
+            return (46900 + (0.245 * (incomeTaxable-250000))).toFixed(2);
+        } else if (incomeTaxable > 400000 && incomeTaxable <= 600000) {
+            return (83650 + (0.25 * (incomeTaxable-400000))).toFixed(2);
+        } else if (incomeTaxable > 600000 && incomeTaxable <= 1000000) {
+            return (133650 + (0.26 * (incomeTaxable-600000))).toFixed(2);
+        } else if (incomeTaxable > 1000000 && incomeTaxable <= 2000000) {
+            return (237650 + (0.28 * (incomeTaxable-600000))).toFixed(2);
+        } else {
+            return (517650 + (0.30 * (incomeTaxable-2000000))).toFixed(2);
+        }
+    }
+
     constructor(props) {
         super(props);
     }
@@ -81,6 +110,8 @@ class Summary extends Component {
                         <h3 >Net Chargeable Income :&nbsp; 
                             <NumberFormat value={this.props.netChargeableIncome} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
                         </h3>
+
+                        <h3>RM : {this.getTaxAmount(this.props.netChargeableIncome)}</h3>
                     </div>
                 </div>
                 
