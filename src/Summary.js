@@ -75,6 +75,18 @@ class Summary extends Component {
 
                 </div>
 
+            <div className="chargeableIncome">
+                <div className="totalTaxPaid">
+                    <div className="chargeableBoxBorder">
+                        <h3 >Net Chargeable Income :&nbsp; 
+                            <NumberFormat value={this.props.netChargeableIncome} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                        </h3>
+                    </div>
+                </div>
+                
+
+            </div>
+
             </div>
         );
     }

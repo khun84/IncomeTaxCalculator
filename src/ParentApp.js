@@ -99,6 +99,7 @@ class ParentApp extends Component {
                  totalTaxRelief={this.state.totalIndividualRelief + this.state.epfAndSocso + this.state.selfDependent}
                  epfAndSocso={this.state.epfAndSocso}
                  selfDependent={this.state.selfDependent}
+                 netChargeableIncome={this.state.totalIncome - this.state.totalIndividualRelief - this.state.epfAndSocso - this.state.selfDependent}
                  />
             }
 
