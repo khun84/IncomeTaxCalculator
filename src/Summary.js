@@ -110,8 +110,10 @@ class Summary extends Component {
                         <h3 >Net Chargeable Income :&nbsp; 
                             <NumberFormat value={this.props.netChargeableIncome} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
                         </h3>
-
+                    </div>
+                    <div className="taxPaid">
                         <h3>RM : {this.getTaxAmount(this.props.netChargeableIncome)}</h3>
+                        <span className="totalTaxPaidText">Total tax to be paid this year</span>
                     </div>
                 </div>
                 
