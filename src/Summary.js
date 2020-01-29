@@ -33,6 +33,18 @@ class Summary extends Component {
         }
     }
 
+    getSavingsFromRelief = () => {
+        return (this.getTaxAmount(this.props.totalIncome) - this.getTaxAmount(this.props.netChargeableIncome)).toFixed(2)
+    }
+
+    getTaxPaid = () => {
+        return ((this.getTaxAmount(this.props.netChargeableIncome)/this.props.netChargeableIncome) * 100).toFixed(2)
+    }
+
+    getMonthlyTaxPaid = () => {
+        return (this.getTaxAmount(this.props.netChargeableIncome)/12).toFixed(2)
+    }
+
     constructor(props) {
         super(props);
     }
@@ -116,7 +128,14 @@ class Summary extends Component {
                         <span className="totalTaxPaidText">Total tax to be paid this year</span>
                     </div>
                 </div>
-                
+
+                <div className="taxPaidStats">
+                <ul className="taxPaidStatsList">
+                    <li><img src="assets/info-button.svg"></img>That's <b>RM {this.getMonthlyTaxPaid()}</b> a month!</li>
+                    <li><img src="assets/info-button.svg"></img>Tax paid is <b>{this.getTaxPaid()} %</b> of your annual salary</li>
+                    <li><img src="assets/info-button.svg"></img>You have saved <b>RM {this.getSavingsFromRelief()}</b> from your tax deductions</li>
+                </ul>
+            </div>
 
             </div>
 

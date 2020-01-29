@@ -258,6 +258,29 @@ ul {
     font-family: 'Fjalla One', sans-serif;
 }
 
+.taxPaidStats {
+    margin: 20px;
+    text-align: center;
+}
+
+.taxPaidStatsList {
+    list-style-type: none;
+    /* max-width: fit-content; */
+    text-align: center;
+}
+
+.taxPaidStatsList img {
+    width: 20px;
+    height: 20px;
+    padding-top: 4px;
+    margin-right: 10px;
+}
+
+.taxPaidStatsList li {
+    font-size: 24px;
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+}
 /* button */
 
 .viewSummaryButton {
