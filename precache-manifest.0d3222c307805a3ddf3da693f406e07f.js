@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "27d3efae6d2641ecead3a95182ff83e4",
+    "revision": "d282d025f823eb8355d5fd5e02df27fd",
     "url": "/IncomeTaxCalculator/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/IncomeTaxCalculator/static/js/2.818b4acd.chunk.js.LICENSE"
   },
   {
-    "revision": "2cd3bf75cc7fb75fd84d",
-    "url": "/IncomeTaxCalculator/static/js/main.c884ed12.chunk.js"
+    "revision": "9f77e42766a5c9d0835d",
+    "url": "/IncomeTaxCalculator/static/js/main.412d539b.chunk.js"
   },
   {
     "revision": "50680e4831fd1c223281",

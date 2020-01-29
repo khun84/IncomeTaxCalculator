@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/IncomeTaxCalculator/static/js/main.c884ed12.chunk.js",
-    "main.js.map": "/IncomeTaxCalculator/static/js/main.c884ed12.chunk.js.map",
+    "main.js": "/IncomeTaxCalculator/static/js/main.412d539b.chunk.js",
+    "main.js.map": "/IncomeTaxCalculator/static/js/main.412d539b.chunk.js.map",
     "runtime-main.js": "/IncomeTaxCalculator/static/js/runtime-main.a7d37bd1.js",
     "runtime-main.js.map": "/IncomeTaxCalculator/static/js/runtime-main.a7d37bd1.js.map",
     "static/js/2.818b4acd.chunk.js": "/IncomeTaxCalculator/static/js/2.818b4acd.chunk.js",
     "static/js/2.818b4acd.chunk.js.map": "/IncomeTaxCalculator/static/js/2.818b4acd.chunk.js.map",
     "index.html": "/IncomeTaxCalculator/index.html",
-    "precache-manifest.ee6a43eab27fa3766e5c64d3d93bc52d.js": "/IncomeTaxCalculator/precache-manifest.ee6a43eab27fa3766e5c64d3d93bc52d.js",
+    "precache-manifest.0d3222c307805a3ddf3da693f406e07f.js": "/IncomeTaxCalculator/precache-manifest.0d3222c307805a3ddf3da693f406e07f.js",
     "service-worker.js": "/IncomeTaxCalculator/service-worker.js",
     "static/js/2.818b4acd.chunk.js.LICENSE": "/IncomeTaxCalculator/static/js/2.818b4acd.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.a7d37bd1.js",
     "static/js/2.818b4acd.chunk.js",
-    "static/js/main.c884ed12.chunk.js"
+    "static/js/main.412d539b.chunk.js"
   ]
 }
