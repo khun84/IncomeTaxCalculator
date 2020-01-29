@@ -85,22 +85,21 @@ class ParentApp extends Component {
 
             <div className="viewSummaryButton">
                 {this.state.showSummary ?
-                 <Summary />
+                <Summary
+                totalIncome={this.state.totalIncome}
+        
+                lifeAndMedical= {this.state.lifeInsuranceRelief + this.state.medicalInsuranceRelief}
+                lifestyleAndEducation = {this.state.lifestyleRelief + this.state.educationRelief}
+                disabled= {this.state.disabledIndividualRelief}
+                totalTaxRelief={this.state.totalIndividualRelief + this.state.epfAndSocso + this.state.selfDependent}
+                epfAndSocso={this.state.epfAndSocso}
+                selfDependent={this.state.selfDependent}
+                netChargeableIncome={this.state.totalIncome - this.state.totalIndividualRelief - this.state.epfAndSocso - this.state.selfDependent}
+                />
                   : 
-            //     <Button variant="contained" color="primary" size="large" startIcon={<MonetizationOnIcon />} onClick={this.showSummarySection}>
-            //     View Summary
-            // </Button> 
-            <Summary
-                 totalIncome={this.state.totalIncome}
-         
-                 lifeAndMedical= {this.state.lifeInsuranceRelief + this.state.medicalInsuranceRelief}
-                 lifestyleAndEducation = {this.state.lifestyleRelief + this.state.educationRelief}
-                 disabled= {this.state.disabledIndividualRelief}
-                 totalTaxRelief={this.state.totalIndividualRelief + this.state.epfAndSocso + this.state.selfDependent}
-                 epfAndSocso={this.state.epfAndSocso}
-                 selfDependent={this.state.selfDependent}
-                 netChargeableIncome={this.state.totalIncome - this.state.totalIndividualRelief - this.state.epfAndSocso - this.state.selfDependent}
-                 />
+                <Button variant="contained" color="primary" size="large" startIcon={<MonetizationOnIcon />} onClick={this.showSummarySection}>
+                View Summary
+                </Button>         
             }
 
             </div>

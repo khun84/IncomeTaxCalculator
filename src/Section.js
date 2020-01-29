@@ -66,11 +66,11 @@ class Section extends Component {
         
             <MoneyTextQuestion 
             id="medicalInsuranceRelief"
-            questionTitle="Medical Insurance Premium" 
+            questionTitle="Medical and Education Insurance Premium" 
             questionSubtitle="total paid for the year"
-            capText="(capped at RM 500)"
-            cap={500}
-            label="Medical Insurance Premiums"
+            capText="(capped at RM 3000)"
+            cap={3000}
+            label="Medical & Education"
             icons={individualReliefQuestionIcons}
             total={this.props.getTotalRelief}/>
             

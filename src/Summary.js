@@ -62,7 +62,7 @@ class Summary extends Component {
                             <li className="listItem summaryBorder">
                                 <h6 className="listItemTitle">Total income before deductions : </h6>
                                 <span className="listItemAmount">
-                                    <NumberFormat value={this.props.totalIncome} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                    <b><NumberFormat value={this.props.totalIncome} displayType={'text'} thousandSeparator={true} prefix={'RM '} /></b>
                                 </span>
                             </li>
 
@@ -108,7 +108,7 @@ class Summary extends Component {
                             <li className="listItem">
                             <h6 className="listItemTitle">Total tax relief deductions : </h6>
                             <span className="listItemAmount">
-                                <NumberFormat value={this.props.totalTaxRelief} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                <b><NumberFormat value={this.props.totalTaxRelief} displayType={'text'} thousandSeparator={true} prefix={'RM '} /></b>
                             </span>
                             </li>
                         </ul>
@@ -132,7 +132,7 @@ class Summary extends Component {
                 <div className="taxPaidStats">
                 <ul className="taxPaidStatsList">
                     <li><img src="assets/info-button.svg"></img>That's <b>RM {this.getMonthlyTaxPaid()}</b> a month!</li>
-                    <li><img src="assets/info-button.svg"></img>Tax paid is <b>{this.getTaxPaid()} %</b> of your annual salary</li>
+                    <li><img src="assets/info-button.svg"></img>Tax paid is <b>{this.getTaxPaid()}%</b> of your annual salary</li>
                     <li><img src="assets/info-button.svg"></img>You have saved <b>RM {this.getSavingsFromRelief()}</b> from your tax deductions</li>
                 </ul>
             </div>
