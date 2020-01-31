@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import NumberFormat from 'react-number-format';
 
 function returnIcon(title) {
     if (title === "Income") {
@@ -32,7 +33,7 @@ export default function IncomeSection(props) {
                 <div className="total">
                         <h6>
                             {getSectionType(props.title)}
-                            RM {props.total}
+                            <NumberFormat value={props.total} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
                         </h6>
                     </div>
                 </h3>
