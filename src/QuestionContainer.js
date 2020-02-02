@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Section from './Section';
+import OptionalSection from './OptionalSection';
+
 
 export default class QuestionContainer extends Component {
 
@@ -24,6 +26,18 @@ export default class QuestionContainer extends Component {
                 title="Individual Tax Relief"
                 getTotalRelief={this.props.getTotalRelief}
                 totalIndividualRelief={this.props.totalIndividualRelief}
+                />
+                </div>
+
+                <div className="questionContainerSubsequent">
+                <OptionalSection
+                questionTitle="Are you married?" 
+                title="Married Tax Relief"
+                getTotalRelief={this.props.getTotalRelief}
+                totalMarriedRelief={this.props.totalMarriedRelief}
+                handleOnYesMarriedClicked={this.props.handleOnYesMarriedClicked}
+                handleOnNoMarriedClicked={this.props.handleOnNoMarriedClicked}
+                married={this.props.married}
                 />
                 
                 </div>

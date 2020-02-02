@@ -13,13 +13,20 @@ function returnIcon(title) {
                 <img className="headerIcons" src="assets/one.svg"></img>
             </div>
         )
+    } else if (title === "Married Tax Relief") {
+        return (
+            <div className="inline-block">
+                <img className="headerIcons" src="assets/tax.svg"></img>
+                <img className="headerIcons" src="assets/married.svg"></img>
+            </div>
+        )
     }
 }
 
 function getSectionType(title) {
     if (title === "Income") {
         return "Total Income : "
-    } else if (title === "Individual Tax Relief") {
+    } else if (title === "Individual Tax Relief" || title === "Married Tax Relief") {
         return "Total Relief : "
     }
 }

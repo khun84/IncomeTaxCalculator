@@ -14,6 +14,8 @@ class Section extends Component {
          return this.props.totalIncome
         } else if (title === "Individual Tax Relief"){
          return this.props.totalIndividualRelief
+        } else if (title === "Married Tax Relief") {
+            return this.props.totalMarriedRelief
         }
     }
 
@@ -103,6 +105,17 @@ class Section extends Component {
             label={["Yes","No"]}
             icons={individualReliefQuestionIcons}
             total={this.props.getTotalRelief}/>
+            
+
+            <MoneyTextQuestion 
+            id="prsRelief"
+            questionTitle="PRS Contributions" 
+            questionSubtitle="contributions to a private retirement scheme (until 2021)"
+            capText="(capped at RM 3,000)"
+            cap={3000}
+            label="PRS Contributions"
+            icons={individualReliefQuestionIcons}
+            total={this.props.getTotalRelief}/>
             </div>
         )
         
@@ -114,21 +127,11 @@ class Section extends Component {
             }
         }
         
-        function getQuestionIcons(title) {
-            if (title === "Income") {
-                return incomeQuestionIcons
-            } else if (title === "Individual Tax Relief"){
-                return individualReliefQuestionIcons
-            }
-        }
-    
-        
-
         return (
             <div className="section">
                 <HeaderSection
                 title={this.props.title}
-                icons={getQuestionIcons(this.props.title)}
+                icons={this.props.title}
                 total={this.getTotalAmount(this.props.title)}
                 />
 
