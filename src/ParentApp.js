@@ -21,9 +21,11 @@ class ParentApp extends Component {
         disabledIndividualRelief: 0,
         prsRelief: 0,
         totalIndividualRelief: 0,
-        totalMarriedRelief: 0,
 
+        totalMarriedRelief: 0,
         married: false,
+        disabledSpouse: 0,
+        workingSpouse: 0,
         
         epfAndSocso: 4250,
         selfDependent: 9000,
@@ -59,6 +61,10 @@ class ParentApp extends Component {
             this.setState ( prevState => ({
                 totalIndividualRelief: prevState.lifeInsuranceRelief + prevState.medicalInsuranceRelief + prevState.lifestyleRelief +
                                         prevState.educationRelief + prevState.disabledIndividualRelief
+            }))
+
+            this.setState ( prevState => ({
+                totalMarriedRelief: prevState.disabledSpouse + prevState.workingSpouse
             }))
         
     }
@@ -114,6 +120,7 @@ class ParentApp extends Component {
                 totalTaxRelief={this.state.totalIndividualRelief + this.state.epfAndSocso + this.state.selfDependent}
                 epfAndSocso={this.state.epfAndSocso}
                 selfDependent={this.state.selfDependent}
+
                 netChargeableIncome={this.state.totalIncome - this.state.totalIndividualRelief - this.state.epfAndSocso - this.state.selfDependent}
                 />
                   : 
