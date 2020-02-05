@@ -34,13 +34,25 @@ export default class QuestionContainer extends Component {
                 questionTitle="Are you married?" 
                 title="Married Tax Relief"
                 getTotalRelief={this.props.getTotalRelief}
-                totalMarriedRelief={this.props.totalMarriedRelief}
-                handleOnYesMarriedClicked={this.props.handleOnYesMarriedClicked}
-                handleOnNoMarriedClicked={this.props.handleOnNoMarriedClicked}
-                married={this.props.married}
+                totalRelief={this.props.totalMarriedRelief}
+                handleOnYesClicked={this.props.handleOnYesMarriedClicked}
+                handleOnNoClicked={this.props.handleOnNoMarriedClicked}
+                answer={this.props.married}
                 />
-                
                 </div>
+                
+                <div className="questionContainerSubsequent">
+                <OptionalSection
+                questionTitle="Do you have Children?" 
+                title="Children Tax Relief"
+                getTotalRelief={this.props.getTotalRelief}
+                totalRelief={this.props.totalChildrenRelief}
+                handleOnYesClicked={this.props.handleOnYesChildrenClicked}
+                handleOnNoClicked={this.props.handleOnNoChildrenClicked}
+                answer={this.props.children}
+                />
+                </div>
+                
 
                 
 

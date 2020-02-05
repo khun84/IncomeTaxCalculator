@@ -26,6 +26,15 @@ class ParentApp extends Component {
         married: false,
         disabledSpouse: 0,
         workingSpouse: 0,
+
+        totalChildrenRelief: 0,
+        children: false,
+        childrenAmount:0,
+        schoolChildren: 0,
+        collegeChildren: 0,
+        uniChildren: 0,
+        disabledChildren: 0,
+        disabledUniChildren: 0,
         
         epfAndSocso: 4250,
         selfDependent: 9000,
@@ -96,6 +105,25 @@ class ParentApp extends Component {
         })
     }
 
+    handleOnYesChildrenClicked = () => {
+        this.setState ({
+            children: true
+        })
+    }
+
+    handleOnNoChildrenClicked = () => {
+        this.setState ({
+            children: false,
+            totalChildrenRelief: 0,
+            childrenAmount:0,
+            schoolChildren: 0,
+            collegeChildren: 0,
+            uniChildren: 0,
+            disabledChildren: 0,
+            disabledUniChildren: 0,
+        })
+    }
+
     render() {
         return (
             <div className="parentApp">
@@ -106,10 +134,18 @@ class ParentApp extends Component {
             getGrossIncome={this.getGrossIncome}
             getOtherIncome={this.getOtherIncome}
             getTotalRelief={this.getTotalRelief}
+
             totalMarriedRelief={this.state.totalMarriedRelief}
+            married={this.state.married}
             handleOnYesMarriedClicked={this.handleOnYesMarriedClicked}
             handleOnNoMarriedClicked={this.handleOnNoMarriedClicked}
-            married={this.state.married}
+            
+            totalChildrenRelief={this.state.totalChildrenRelief}
+            children={this.state.children}
+            handleOnYesChildrenClicked={this.handleOnYesChildrenClicked}
+            handleOnNoChildrenClicked={this.handleOnNoChildrenClicked}
+            
+
             />
 
             <div className="viewSummaryButton">

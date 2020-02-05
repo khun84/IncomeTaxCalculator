@@ -55,26 +55,26 @@ class OptionalSection extends Component {
         return (
             <div className="optionalSectionHeader">
                 <span >
-                    <h5 className={(this.props.married ? 'bottom-padding-20 b-border-black' : '')}>
+                    <h5 className={(this.props.answer ? 'bottom-padding-20 b-border-black' : '')}>
                         {this.props.questionTitle}
                         <span className="optionalSectionButtons">
-                        {this.props.married ?
+                        {this.props.answer ?
                             <div className="optionalSectionButtons">
-                            <Button className="optionalButton" variant="contained" color="primary" size="large" onClick={this.props.handleOnYesMarriedClicked}>
+                            <Button className="optionalButton" variant="contained" color="primary" size="large" onClick={this.props.handleOnYesClicked}>
                             Yes
                             </Button> 
 
-                            <Button className="optionalButton" variant="outlined" color="secondary" size="large" onClick={this.props.handleOnNoMarriedClicked}>
+                            <Button className="optionalButton" variant="outlined" color="secondary" size="large" onClick={this.props.handleOnNoClicked}>
                             No
                             </Button>  
                             </div>
                             : 
                             <div className="optionalSectionButtons">
-                            <Button className="optionalButton" variant="outlined" color="primary" size="large" onClick={this.props.handleOnYesMarriedClicked}>
+                            <Button className="optionalButton" variant="outlined" color="primary" size="large" onClick={this.props.handleOnYesClicked}>
                             Yes
                             </Button> 
 
-                            <Button className="optionalButton" variant="contained" color="secondary" size="large" onClick={this.props.handleOnNoMarriedClicked}>
+                            <Button className="optionalButton" variant="contained" color="secondary" size="large" onClick={this.props.handleOnNoClicked}>
                             No
                             </Button>  
                             </div>
@@ -84,12 +84,12 @@ class OptionalSection extends Component {
                     </h5>
                 </span>
 
-                {this.props.married ?
+                {this.props.answer ?
                 <div>
                     <HeaderSection
                     title={this.props.title}
                     icons={this.props.title}
-                    total={this.props.totalMarriedRelief}
+                    total={this.props.totalRelief}
                     />
 
                     {this.getQuestions(this.props.title)}
