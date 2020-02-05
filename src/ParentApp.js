@@ -89,7 +89,10 @@ class ParentApp extends Component {
 
     handleOnNoMarriedClicked = () => {
         this.setState ({
-            married: false
+            married: false,
+            totalMarriedRelief: 0,
+            disabledSpouse: 0,
+            workingSpouse: 0,
         })
     }
 

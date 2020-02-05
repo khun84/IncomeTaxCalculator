@@ -38,7 +38,7 @@ class CheckboxQuestion extends Component {
                   </div>
             </div>
             
-            <div className="incomeInput">
+            <div className="checkboxInput">
             <FormControlLabel
             control={
               <Checkbox
