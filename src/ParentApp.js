@@ -55,9 +55,15 @@ class ParentApp extends Component {
     }
 
     getTotalRelief = (value, id, cap) => {
+            console.log(value)
+            console.log(id)
+            console.log(cap)
+
             var cappedRelief = 0
 
-            if (value > cap) {
+            if (cap == 0) {
+                cappedRelief = value
+            } else if (value > cap) {
                 cappedRelief = cap
             } else {
                 cappedRelief = value
@@ -74,6 +80,10 @@ class ParentApp extends Component {
 
             this.setState ( prevState => ({
                 totalMarriedRelief: prevState.disabledSpouse + prevState.workingSpouse
+            }))
+
+            this.setState ( prevState => ({
+                totalChildrenRelief: prevState.disabledSpouse + prevState.workingSpouse
             }))
         
     }
@@ -144,6 +154,7 @@ class ParentApp extends Component {
             children={this.state.children}
             handleOnYesChildrenClicked={this.handleOnYesChildrenClicked}
             handleOnNoChildrenClicked={this.handleOnNoChildrenClicked}
+            childrenAmount={this.state.childrenAmount}
             
 
             />

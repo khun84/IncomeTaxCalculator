@@ -3,6 +3,7 @@ import HeaderSection from './HeaderSection';
 import Button from '@material-ui/core/Button';
 import MoneyTextQuestion from './MoneyTextQuestion';
 import CheckboxQuestion from './CheckboxQuestion';
+import NumberQuestion from './NumberQuestion';
 
 class OptionalSection extends Component {
 
@@ -14,6 +15,13 @@ class OptionalSection extends Component {
         <div className="questionIcon">
         <img className="headerIcons" src="assets/tax.svg"></img>
         <img className="headerIcons" src="assets/married.svg"></img>
+        </div>
+    )
+
+    childrenReliefIcons = (
+        <div className="questionIcon">
+        <img className="headerIcons" src="assets/tax.svg"></img>
+        <img className="headerIcons" src="assets/family.svg"></img>
         </div>
     )
 
@@ -43,11 +51,24 @@ class OptionalSection extends Component {
         </div>
     )
 
+    childrenReliefQuestions = (
+        <NumberQuestion 
+            id = "childrenAmount" 
+            questionTitle="How many children do you have?" 
+            questionSubtitle="of any age"
+            capText="(at least RM 2,000 per child)"
+            cap={0}
+            icons={this.childrenReliefIcons}
+            total={this.props.getTotalRelief}
+            label="Amount of children"
+        />
+    )
+
     getQuestions(title) {
         if (title === "Married Tax Relief") {
             return this.marriedReliefQuestions
         } else if (title === "Children Tax Relief") {
-            
+            return this.childrenReliefQuestions   
         }
     }
 
@@ -59,7 +80,7 @@ class OptionalSection extends Component {
                         {this.props.questionTitle}
                         <span className="optionalSectionButtons">
                         {this.props.answer ?
-                            <div className="optionalSectionButtons">
+                            <div className="optionalSectionButtons margin-right-20">
                             <Button className="optionalButton" variant="contained" color="primary" size="large" onClick={this.props.handleOnYesClicked}>
                             Yes
                             </Button> 
@@ -85,11 +106,12 @@ class OptionalSection extends Component {
                 </span>
 
                 {this.props.answer ?
-                <div>
+                <div className="optionalSectionContainer">
                     <HeaderSection
                     title={this.props.title}
                     icons={this.props.title}
                     total={this.props.totalRelief}
+                    childrenAmount={this.props.childrenAmount}
                     />
 
                     {this.getQuestions(this.props.title)}

@@ -106,6 +106,18 @@
     margin-right: 20px;
 }
 
+.optionalSectionContainer button {
+    margin: 0;
+}
+
+.float-right {
+    float: right;
+}
+
+.padding-top-40 {
+    padding-top: 40px;
+}
+
 /* summary section */
 
 .summarySection{
@@ -403,6 +415,15 @@ ul {
     text-align: center;
 }
 
+.float-right {
+    float: left;
+    text-align: center;
+}
+
+.padding-top-40 {
+    padding-top: 10px;
+}
+
 }
 
 @media (max-width: 570px)  {
@@ -482,3 +503,10 @@ ul {
 .bottom-padding-20 {
     padding-bottom: 20px;
 }
+
+.margin-top-10 {
+    margin-top: 20px;
+}
+
+
+

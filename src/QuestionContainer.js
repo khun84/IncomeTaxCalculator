@@ -50,6 +50,7 @@ export default class QuestionContainer extends Component {
                 handleOnYesClicked={this.props.handleOnYesChildrenClicked}
                 handleOnNoClicked={this.props.handleOnNoChildrenClicked}
                 answer={this.props.children}
+                childrenAmount={this.props.childrenAmount}
                 />
                 </div>
                 

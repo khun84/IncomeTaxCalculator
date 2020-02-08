@@ -20,6 +20,13 @@ function returnIcon(title) {
                 <img className="headerIcons" src="assets/married.svg"></img>
             </div>
         )
+    } else if (title === "Children Tax Relief") {
+        return (
+            <div className="inline-block">
+                <img className="headerIcons" src="assets/tax.svg"></img>
+                <img className="headerIcons" src="assets/family.svg"></img>
+            </div>
+        )
     }
 }
 
@@ -40,7 +47,15 @@ export default function IncomeSection(props) {
                 <div className="total">
                         <h6>
                             {getSectionType(props.title)}
+                            <div>
                             <NumberFormat value={props.total} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                            {props.title === "Children Tax Relief" ?
+                                <h6>No of Children : {props.childrenAmount}</h6>
+                            :
+                                null
+                            }
+                            
+                            </div>
                         </h6>
                     </div>
                 </h3>
