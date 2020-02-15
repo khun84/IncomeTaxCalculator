@@ -30,11 +30,17 @@ class ParentApp extends Component {
         totalChildrenRelief: 0,
         children: false,
         childrenAmount:0,
+        disabledChildrenAmount:0,
         schoolChildren: 0,
         collegeChildren: 0,
         uniChildren: 0,
         disabledChildren: 0,
         disabledUniChildren: 0,
+        schoolChildrenToDisplay: 0,
+        collegeChildrenToDisplay: 0,
+        uniChildrenToDisplay: 0,
+        remainingChildren: 0,
+
         
         epfAndSocso: 4250,
         selfDependent: 9000,
@@ -83,7 +89,13 @@ class ParentApp extends Component {
             }))
 
             this.setState ( prevState => ({
-                totalChildrenRelief: prevState.disabledSpouse + prevState.workingSpouse
+                totalChildrenRelief: (prevState.schoolChildren * 2000) + (prevState.collegeChildren * 2000) + (prevState.uniChildren * 8000) 
+                            + (prevState.disabledChildren * 6000) + (prevState.disabledUniChildren * 8000),
+
+                schoolChildrenToDisplay: prevState.childrenAmount,
+                collegeChildrenToDisplay: prevState.childrenAmount - prevState.schoolChildren,
+                uniChildrenToDisplay: prevState.childrenAmount - prevState.schoolChildren - prevState.collegeChildren,
+                remainingChildren: prevState.childrenAmount - prevState.schoolChildrenToDisplay - prevState.collegeChildrenToDisplay - prevState.uniChildrenToDisplay
             }))
         
     }
@@ -155,6 +167,9 @@ class ParentApp extends Component {
             handleOnYesChildrenClicked={this.handleOnYesChildrenClicked}
             handleOnNoChildrenClicked={this.handleOnNoChildrenClicked}
             childrenAmount={this.state.childrenAmount}
+            schoolChildrenToDisplay={this.state.schoolChildrenToDisplay}
+            collegeChildrenToDisplay={this.state.collegeChildrenToDisplay}
+            uniChildrenToDisplay={this.state.uniChildrenToDisplay}
             
 
             />

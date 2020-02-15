@@ -10,27 +10,78 @@ export default function NumberQuestion(props) {
 
     const isMoreThanFive = () => {
         setMoreThanFive(true)
-        setSelected(0)
+        // setSelected(0)
     }
 
-    const onNumberClicked = amount =>{
+    // const onNumberClickedBaseQuestion = (amount) =>{
+    //     setSelected(amount)
+    //     setMoreThanFive(false)
+        
+    //     props.total(parseInt(amount), props.id, 0)
+        
+        
+    //     // console.log(id)
+    // }
+
+    const onNumberClicked = (amount) =>{
         setSelected(amount)
         setMoreThanFive(false)
-
-        if (props.id === "childrenAmount") {
-            props.total(amount, props.id, 0)
-        }
+        console.log('amount clicked : ' + amount)
+        props.total(parseInt(amount), props.id, 0)
+        
         
         // console.log(id)
     }
 
     const onAmountChanged = amount => event => {
         setSelected(event.target.value);
-        if (props.id === "childrenAmount") {
-            props.total(event.target.value, props.id, 0)
-        }
+
+        props.total(event.target.value, props.id, 0)
+        
 
         // console.log(event.target.value)
+    }
+
+    const buttonGroup = (
+        <ButtonGroup color="primary" aria-label="outlined primary button group">
+
+
+        </ButtonGroup>
+    ) 
+
+    const defaultButtonGroup = (
+        <ButtonGroup color="primary" aria-label="outlined primary button group">
+            <Button id={1} variant={selected == 1 ? "contained" : ""} onClick={(id) => onNumberClicked(1)}>1</Button>
+            <Button id={2} variant={selected == 2 ? "contained" : ""} onClick={(id) => onNumberClicked(2)}>2</Button>
+            <Button id={3} variant={selected == 3 ? "contained" : ""} onClick={(id) => onNumberClicked(3)}>3</Button>
+            <Button id={4} variant={selected == 4 ? "contained" : ""} onClick={(id) => onNumberClicked(4)}>4</Button>
+            <Button id={5} variant={selected == 5 ? "contained" : ""} onClick={(id) => onNumberClicked(5)}>5</Button>
+            <Button id={0} variant={moreThanFive ? "contained" : ""} onClick={(id) => isMoreThanFive()}>>5</Button>
+        </ButtonGroup>
+    )
+
+    const getChildrenRemainingAmount = () => {
+
+        if (props.baseQuestion) {
+            // console.log('is zero')
+            return defaultButtonGroup
+        } else if (props.childrenAmount > 0){
+            // console.log('children : ' +  props.childrenAmountToDisplay)
+            var elements = []
+
+                for (let i = 0; i < props.amountToDisplay + 1; i++) {
+                
+                    elements.push(<Button variant={selected == i ? "contained" : ""} onClick={() => onNumberClicked(i)}>{i}</Button>)
+                }
+                //TODO add function to minus from children amount to be shown 
+    
+            return (
+                <ButtonGroup color="primary" aria-label="outlined primary button group">
+                    {elements}
+                </ButtonGroup>
+                
+            )
+        }       
     }
         
 
@@ -48,15 +99,9 @@ export default function NumberQuestion(props) {
                 </div>
 
                 <div className="padding-top-40 float-right">
-                <ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <Button id={1} variant={selected == 1 ? "contained" : ""} onClick={(id) => onNumberClicked(1)}>1</Button>
-                    <Button id={2} variant={selected == 2 ? "contained" : ""} onClick={(id) => onNumberClicked(2)}>2</Button>
-                    <Button id={3} variant={selected == 3 ? "contained" : ""} onClick={(id) => onNumberClicked(3)}>3</Button>
-                    <Button id={4} variant={selected == 4 ? "contained" : ""} onClick={(id) => onNumberClicked(4)}>4</Button>
-                    <Button id={5} variant={selected == 5 ? "contained" : ""} onClick={(id) => onNumberClicked(5)}>5</Button>
-                    <Button id={0} variant={moreThanFive ? "contained" : ""} onClick={(id) => isMoreThanFive()}>>5</Button>
-                </ButtonGroup>
-
+               
+                {getChildrenRemainingAmount()}
+               
                 {moreThanFive ? 
                 <div className="margin-top-10">
                     <TextField

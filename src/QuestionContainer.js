@@ -51,6 +51,9 @@ export default class QuestionContainer extends Component {
                 handleOnNoClicked={this.props.handleOnNoChildrenClicked}
                 answer={this.props.children}
                 childrenAmount={this.props.childrenAmount}
+                schoolChildrenToDisplay={this.props.schoolChildrenToDisplay}
+                collegeChildrenToDisplay={this.props.collegeChildrenToDisplay}
+                uniChildrenToDisplay={this.props.uniChildrenToDisplay}
                 />
                 </div>
                 

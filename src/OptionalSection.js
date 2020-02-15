@@ -51,24 +51,72 @@ class OptionalSection extends Component {
         </div>
     )
 
-    childrenReliefQuestions = (
-        <NumberQuestion 
+    childrenReliefQuestions(childrenAmount, childrenAmountToShow)  {
+            return (
+
+            <div>
+            <NumberQuestion 
             id = "childrenAmount" 
             questionTitle="How many children do you have?" 
             questionSubtitle="of any age"
             capText="(at least RM 2,000 per child)"
             cap={0}
-            icons={this.childrenReliefIcons}
             total={this.props.getTotalRelief}
             label="Amount of children"
-        />
-    )
+            childrenAmountToDisplay={childrenAmountToShow}
+            childrenAmount={childrenAmount}
+            baseQuestion={true}
+            />
 
-    getQuestions(title) {
+            <NumberQuestion 
+            id = "schoolChildren" 
+            questionTitle="How many are under 18 years of age" 
+            questionSubtitle="unmarried children"
+            capText="(RM 2,000 per child)"
+            cap={0}
+            total={this.props.getTotalRelief}
+            label="Amount of children"
+            childrenAmount={childrenAmount}
+            baseQuestion={false}
+            amountToDisplay={this.props.schoolChildrenToDisplay}
+            />
+
+            <NumberQuestion 
+            id = "collegeChildren" 
+            questionTitle="How many are above 18 years of age and are undergoing pre-university education" 
+            questionSubtitle="A-Levels, STPM, Matriculation"
+            capText="(RM 2,000 per child)"
+            cap={0}
+            total={this.props.getTotalRelief}
+            label="Amount of children"
+            childrenAmount={childrenAmount}
+            baseQuestion={false}
+            amountToDisplay={this.props.collegeChildrenToDisplay}
+            />
+
+            <NumberQuestion 
+            id = "uniChildren" 
+            questionTitle="How many are above 18 years of age and are undergoing university education" 
+            questionSubtitle="Diploma, Degree, Masters, Doctorate"
+            capText="(RM 8,000 per child)"
+            cap={0}
+            total={this.props.getTotalRelief}
+            label="Amount of children"
+            childrenAmount={childrenAmount}
+            baseQuestion={false}
+            amountToDisplay={this.props.uniChildrenToDisplay}
+            />
+            </div>   
+            )
+    }
+        
+    
+
+    getQuestions(title, childrenAmount, childrenAmountToShow) {
         if (title === "Married Tax Relief") {
             return this.marriedReliefQuestions
         } else if (title === "Children Tax Relief") {
-            return this.childrenReliefQuestions   
+            return this.childrenReliefQuestions(childrenAmount, childrenAmountToShow)   
         }
     }
 
@@ -114,7 +162,7 @@ class OptionalSection extends Component {
                     childrenAmount={this.props.childrenAmount}
                     />
 
-                    {this.getQuestions(this.props.title)}
+                    {this.getQuestions(this.props.title, this.props.childrenAmount, this.props.childrenAmountToShow)}
                  </div>   
                     :
                     null

@@ -33,7 +33,7 @@ function returnIcon(title) {
 function getSectionType(title) {
     if (title === "Income") {
         return "Total Income : "
-    } else if (title === "Individual Tax Relief" || title === "Married Tax Relief") {
+    } else if (title === "Individual Tax Relief" || title === "Married Tax Relief" || title === "Children Tax Relief") {
         return "Total Relief : "
     }
 }
