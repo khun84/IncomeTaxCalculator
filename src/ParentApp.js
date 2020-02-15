@@ -92,8 +92,8 @@ class ParentApp extends Component {
                 totalChildrenRelief: (prevState.schoolChildren * 2000) + (prevState.collegeChildren * 2000) + (prevState.uniChildren * 8000) 
                             + (prevState.disabledChildren * 6000) + (prevState.disabledUniChildren * 8000),
 
-                schoolChildrenToDisplay: prevState.childrenAmount,
-                collegeChildrenToDisplay: prevState.childrenAmount - prevState.schoolChildren,
+                schoolChildrenToDisplay: prevState.childrenAmount - prevState.collegeChildren - prevState.uniChildren,
+                collegeChildrenToDisplay: prevState.childrenAmount - prevState.schoolChildren - prevState.uniChildren,
                 uniChildrenToDisplay: prevState.childrenAmount - prevState.schoolChildren - prevState.collegeChildren,
                 remainingChildren: prevState.childrenAmount - prevState.schoolChildrenToDisplay - prevState.collegeChildrenToDisplay - prevState.uniChildrenToDisplay
             }))
