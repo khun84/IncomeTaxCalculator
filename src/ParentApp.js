@@ -39,8 +39,6 @@ class ParentApp extends Component {
         schoolChildrenToDisplay: 0,
         collegeChildrenToDisplay: 0,
         uniChildrenToDisplay: 0,
-        remainingChildren: 0,
-
         
         epfAndSocso: 4250,
         selfDependent: 9000,
@@ -95,7 +93,6 @@ class ParentApp extends Component {
                 schoolChildrenToDisplay: prevState.childrenAmount - prevState.collegeChildren - prevState.uniChildren,
                 collegeChildrenToDisplay: prevState.childrenAmount - prevState.schoolChildren - prevState.uniChildren,
                 uniChildrenToDisplay: prevState.childrenAmount - prevState.schoolChildren - prevState.collegeChildren,
-                remainingChildren: prevState.childrenAmount - prevState.schoolChildrenToDisplay - prevState.collegeChildrenToDisplay - prevState.uniChildrenToDisplay
             }))
         
     }

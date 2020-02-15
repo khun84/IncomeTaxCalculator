@@ -68,44 +68,51 @@ class OptionalSection extends Component {
             baseQuestion={true}
             />
 
-            <NumberQuestion 
-            id = "schoolChildren" 
-            questionTitle="How many are under 18 years of age" 
-            questionSubtitle="unmarried children"
-            capText="(RM 2,000 per child)"
-            cap={0}
-            total={this.props.getTotalRelief}
-            label="Amount of children"
-            childrenAmount={childrenAmount}
-            baseQuestion={false}
-            amountToDisplay={this.props.schoolChildrenToDisplay}
-            />
-
-            <NumberQuestion 
-            id = "collegeChildren" 
-            questionTitle="How many are above 18 years of age and are undergoing pre-university education" 
-            questionSubtitle="A-Levels, STPM, Matriculation"
-            capText="(RM 2,000 per child)"
-            cap={0}
-            total={this.props.getTotalRelief}
-            label="Amount of children"
-            childrenAmount={childrenAmount}
-            baseQuestion={false}
-            amountToDisplay={this.props.collegeChildrenToDisplay}
-            />
-
-            <NumberQuestion 
-            id = "uniChildren" 
-            questionTitle="How many are above 18 years of age and are undergoing university education" 
-            questionSubtitle="Diploma, Degree, Masters, Doctorate"
-            capText="(RM 8,000 per child)"
-            cap={0}
-            total={this.props.getTotalRelief}
-            label="Amount of children"
-            childrenAmount={childrenAmount}
-            baseQuestion={false}
-            amountToDisplay={this.props.uniChildrenToDisplay}
-            />
+            {childrenAmount > 0 ?
+                <div>
+                <NumberQuestion 
+                id = "schoolChildren" 
+                questionTitle="How many are under 18 years of age" 
+                questionSubtitle="unmarried children"
+                capText="(RM 2,000 per child)"
+                cap={0}
+                total={this.props.getTotalRelief}
+                label="Amount of children"
+                childrenAmount={childrenAmount}
+                baseQuestion={false}
+                amountToDisplay={this.props.schoolChildrenToDisplay}
+                />
+    
+                <NumberQuestion 
+                id = "collegeChildren" 
+                questionTitle="How many are above 18 years of age and are undergoing pre-university education" 
+                questionSubtitle="A-Levels, STPM, Matriculation"
+                capText="(RM 2,000 per child)"
+                cap={0}
+                total={this.props.getTotalRelief}
+                label="Amount of children"
+                childrenAmount={childrenAmount}
+                baseQuestion={false}
+                amountToDisplay={this.props.collegeChildrenToDisplay}
+                />
+    
+                <NumberQuestion 
+                id = "uniChildren" 
+                questionTitle="How many are above 18 years of age and are undergoing university education" 
+                questionSubtitle="Diploma, Degree, Masters, Doctorate"
+                capText="(RM 8,000 per child)"
+                cap={0}
+                total={this.props.getTotalRelief}
+                label="Amount of children"
+                childrenAmount={childrenAmount}
+                baseQuestion={false}
+                amountToDisplay={this.props.uniChildrenToDisplay}
+                />
+                </div>
+                :
+                null
+            }                            
+           
             </div>   
             )
     }
