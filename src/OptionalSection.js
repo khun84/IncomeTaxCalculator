@@ -51,7 +51,7 @@ class OptionalSection extends Component {
         </div>
     )
 
-    childrenReliefQuestions(childrenAmount, childrenAmountToShow)  {
+    childrenReliefQuestions(childrenAmount, childrenAmountToShow, hasDisabledChildren)  {
             return (
 
             <div>
@@ -108,6 +108,52 @@ class OptionalSection extends Component {
                 baseQuestion={false}
                 amountToDisplay={this.props.uniChildrenToDisplay}
                 />
+                
+
+                <CheckboxQuestion 
+                id = "hasDisabledChildren" 
+                questionTitle="Do you have any disabled children?" 
+                questionSubtitle=""
+                capText=""
+                cap={0}
+                total={null}
+                hasDisabledChildrenFunc={this.props.hasDisabledChildrenFunc}
+                />
+
+                {hasDisabledChildren ?
+                    <div>
+                    
+                    <NumberQuestion 
+                    id = "disabledChildren" 
+                    questionTitle="How many are disabled?"
+                    questionSubtitle=""
+                    capText="(RM 6,000 per child)"
+                    cap={6000}
+                    total={this.props.getTotalRelief}
+                    label="Amount of children"
+                    childrenAmount={childrenAmount}
+                    baseQuestion={false}
+                    amountToDisplay={childrenAmount}
+                    />
+
+                    <NumberQuestion 
+                    id = "disabledUniChildren" 
+                    questionTitle="How many are currently undergoing higher education?"
+                    questionSubtitle=""
+                    capText="(RM 8,000 per child)"
+                    cap={8000}
+                    total={this.props.getTotalRelief}
+                    label="Amount of children"
+                    childrenAmount={childrenAmount}
+                    baseQuestion={false}
+                    amountToDisplay={this.props.disabledChildren}
+                    />
+
+                    </div>
+                :
+                    null
+                }
+
                 </div>
                 :
                 null
@@ -119,11 +165,11 @@ class OptionalSection extends Component {
         
     
 
-    getQuestions(title, childrenAmount, childrenAmountToShow) {
+    getQuestions(title, childrenAmount, childrenAmountToShow, hasDisabledChildren) {
         if (title === "Married Tax Relief") {
             return this.marriedReliefQuestions
         } else if (title === "Children Tax Relief") {
-            return this.childrenReliefQuestions(childrenAmount, childrenAmountToShow)   
+            return this.childrenReliefQuestions(childrenAmount, childrenAmountToShow, hasDisabledChildren) 
         }
     }
 
@@ -169,7 +215,7 @@ class OptionalSection extends Component {
                     childrenAmount={this.props.childrenAmount}
                     />
 
-                    {this.getQuestions(this.props.title, this.props.childrenAmount, this.props.childrenAmountToShow)}
+                    {this.getQuestions(this.props.title, this.props.childrenAmount, this.props.childrenAmountToShow, this.props.hasDisabledChildren)}
                  </div>   
                     :
                     null

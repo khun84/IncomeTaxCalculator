@@ -14,11 +14,21 @@ class CheckboxQuestion extends Component {
 
     handleChange = name => event => {
           if (name) {
-            this.setState({ ...this.state, disabledIndividual: true });      
-            this.props.total(this.props.cap, this.props.id, this.props.cap)
+            this.setState({ ...this.state, disabledIndividual: true });     
+            if (this.props.total != null)  {
+              this.props.total(this.props.cap, this.props.id, this.props.cap)
+            } else {
+              this.props.hasDisabledChildrenFunc(true)
+            }
+            
           } else {
             this.setState({ ...this.state, disabledIndividual: false });
-            this.props.total(0, this.props.id, this.props.cap)
+            if (this.props.total != null)  {
+              this.props.total(0, this.props.id, this.props.cap)
+            } else {
+              this.props.hasDisabledChildrenFunc(false)
+            }
+            
           }
 
           

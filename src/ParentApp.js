@@ -34,6 +34,7 @@ class ParentApp extends Component {
         schoolChildren: 0,
         collegeChildren: 0,
         uniChildren: 0,
+        hasDisabledChildren: false,
         disabledChildren: 0,
         disabledUniChildren: 0,
         schoolChildrenToDisplay: 0,
@@ -143,6 +144,12 @@ class ParentApp extends Component {
         })
     }
 
+    hasDisabledChildrenFunc = (hasDisabled) => {
+        this.setState ({
+            hasDisabledChildren: hasDisabled
+        })
+    }
+
     render() {
         return (
             <div className="parentApp">
@@ -167,7 +174,9 @@ class ParentApp extends Component {
             schoolChildrenToDisplay={this.state.schoolChildrenToDisplay}
             collegeChildrenToDisplay={this.state.collegeChildrenToDisplay}
             uniChildrenToDisplay={this.state.uniChildrenToDisplay}
-            
+            hasDisabledChildren={this.state.hasDisabledChildren}
+            hasDisabledChildrenFunc={this.hasDisabledChildrenFunc}
+            disabledChildren={this.state.disabledChildren}
 
             />
 

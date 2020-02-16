@@ -54,6 +54,9 @@ export default class QuestionContainer extends Component {
                 schoolChildrenToDisplay={this.props.schoolChildrenToDisplay}
                 collegeChildrenToDisplay={this.props.collegeChildrenToDisplay}
                 uniChildrenToDisplay={this.props.uniChildrenToDisplay}
+                hasDisabledChildren={this.props.hasDisabledChildren}
+                hasDisabledChildrenFunc={this.props.hasDisabledChildrenFunc}
+                disabledChildren={this.props.disabledChildren}
                 />
                 </div>
                 
