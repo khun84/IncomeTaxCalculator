@@ -146,7 +146,9 @@ class ParentApp extends Component {
 
     hasDisabledChildrenFunc = (hasDisabled) => {
         this.setState ({
-            hasDisabledChildren: hasDisabled
+            hasDisabledChildren: hasDisabled,
+            disabledChildren: 0,
+            disabledUniChildren: 0,
         })
     }
 
@@ -191,6 +193,8 @@ class ParentApp extends Component {
                 totalTaxRelief={this.state.totalIndividualRelief + this.state.epfAndSocso + this.state.selfDependent}
                 epfAndSocso={this.state.epfAndSocso}
                 selfDependent={this.state.selfDependent}
+                totalMarriedRelief={this.state.totalMarriedRelief}
+                totalChildrenRelief={this.state.totalChildrenRelief}
 
                 netChargeableIncome={this.state.totalIncome - this.state.totalIndividualRelief - this.state.epfAndSocso - this.state.selfDependent}
                 />

@@ -98,10 +98,24 @@ class Summary extends Component {
                                  </span>
                             </li>
 
-                            <li className="listItem summaryBorder">
+                            <li className="listItem">
                                 <span className="listItemTitle">Disabled Individual</span>
                                 <span className="listItemAmount">
                                     <NumberFormat value={this.props.disabled} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                </span>
+                            </li>
+
+                            <li className="listItem ">
+                                <span className="listItemTitle">Marriage Relief</span>
+                                <span className="listItemAmount">
+                                    <NumberFormat value={this.props.totalMarriedRelief} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
+                                </span>
+                            </li>
+
+                            <li className="listItem summaryBorder">
+                                <span className="listItemTitle">Children Relief</span>
+                                <span className="listItemAmount">
+                                    <NumberFormat value={this.props.totalChildrenRelief} displayType={'text'} thousandSeparator={true} prefix={'RM '} />
                                 </span>
                             </li>
 
