@@ -37,16 +37,7 @@ class OptionalSection extends Component {
         icons={this.marriedReliefIcons}
         total={this.props.getTotalRelief}
         />
-    
-        <CheckboxQuestion 
-        id = "workingSpouse" 
-        questionTitle="Is your spouse working?" 
-        questionSubtitle="or making alimony payments "
-        capText="(fixed at RM 4,000)"
-        cap={4000}
-        icons={this.marriedReliefIcons}
-        total={this.props.getTotalRelief}
-        />
+
 
         </div>
     )

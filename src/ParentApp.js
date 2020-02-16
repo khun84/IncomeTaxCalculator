@@ -111,9 +111,11 @@ class ParentApp extends Component {
     }
 
     handleOnYesMarriedClicked = () => {
-        this.setState ({
-            married: true
-        })
+        this.setState( prevState => ({
+            married: true,
+            workingSpouse: 4000,
+            totalMarriedRelief: prevState.disabledSpouse + 4000
+        }))
     }
 
     handleOnNoMarriedClicked = () => {
@@ -196,7 +198,8 @@ class ParentApp extends Component {
                 totalMarriedRelief={this.state.totalMarriedRelief}
                 totalChildrenRelief={this.state.totalChildrenRelief}
 
-                netChargeableIncome={this.state.totalIncome - this.state.totalIndividualRelief - this.state.epfAndSocso - this.state.selfDependent}
+                netChargeableIncome={this.state.totalIncome - this.state.totalIndividualRelief - this.state.epfAndSocso - this.state.selfDependent 
+                    - this.state.totalMarriedRelief - this.state.totalChildrenRelief} 
                 />
                   : 
                 <Button variant="contained" color="primary" size="large" startIcon={<MonetizationOnIcon />} onClick={this.showSummarySection}>
