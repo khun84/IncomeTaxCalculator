@@ -111,7 +111,7 @@ class OptionalSection extends Component {
 
                 <MoneyTextQuestion 
                 id = "childcareRelief" 
-                questionTitle="Amount spen for childcare" 
+                questionTitle="Amount spent for childcare" 
                 questionSubtitle="total spent in kindergarten or child care centre"
                 label="Childcare Cost"
                 cap={1000}

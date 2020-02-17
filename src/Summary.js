@@ -4,6 +4,10 @@ import NumberFormat from 'react-number-format';
 
 class Summary extends Component {
 
+    handleClick = () => {
+        
+    }
+
     getTaxAmount = (incomeTaxable) => {
         console.log("income " + incomeTaxable)
         if (incomeTaxable > 0 && incomeTaxable <= 5000) {
@@ -148,6 +152,8 @@ class Summary extends Component {
                     <li><img src="assets/info-button.svg"></img>That's <b>RM {this.getMonthlyTaxPaid()}</b> a month!</li>
                     <li><img src="assets/info-button.svg"></img>Tax paid is <b>{this.getTaxPaid()}%</b> of your annual salary</li>
                     <li><img src="assets/info-button.svg"></img>You have saved <b>RM {this.getSavingsFromRelief()}</b> from your tax deductions</li>
+                    <br></br>
+                    <li><a className="summaryLink" target="_blank" href="http://www.hasil.gov.my/bt_goindex.php?bt_kump=5&bt_skum=1&bt_posi=2&bt_unit=5000&bt_sequ=11" onClick={() => {this.handleClick()}}>How are your taxes calculated?</a></li>
                 </ul>
             </div>
 
