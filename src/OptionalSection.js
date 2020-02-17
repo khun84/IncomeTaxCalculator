@@ -50,7 +50,6 @@ class OptionalSection extends Component {
             id = "childrenAmount" 
             questionTitle="How many children do you have?" 
             questionSubtitle="of any age"
-            capText="(at least RM 2,000 per child)"
             cap={0}
             total={this.props.getTotalRelief}
             label="Amount of children"
@@ -100,6 +99,25 @@ class OptionalSection extends Component {
                 amountToDisplay={this.props.uniChildrenToDisplay}
                 />
                 
+                <MoneyTextQuestion 
+                id = "sspnRelief" 
+                questionTitle="Net saving in SSPN's scheme" 
+                questionSubtitle="total deposit for last year MINUS total withdrawal in the last year"
+                label="SSPN Deposits"
+                cap={6000}
+                capText="(capped at RM 6,000)"
+                total={this.props.getTotalRelief}                
+                />
+
+                <MoneyTextQuestion 
+                id = "childcareRelief" 
+                questionTitle="Amount spen for childcare" 
+                questionSubtitle="total spent in kindergarten or child care centre"
+                label="Childcare Cost"
+                cap={1000}
+                capText="(capped at RM 1,000)"
+                total={this.props.getTotalRelief}                
+                />
 
                 <CheckboxQuestion 
                 id = "hasDisabledChildren" 
@@ -109,7 +127,7 @@ class OptionalSection extends Component {
                 cap={0}
                 total={null}
                 hasDisabledChildrenFunc={this.props.hasDisabledChildrenFunc}
-                />
+                />               
 
                 {hasDisabledChildren ?
                     <div>

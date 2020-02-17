@@ -40,6 +40,8 @@ class ParentApp extends Component {
         schoolChildrenToDisplay: 0,
         collegeChildrenToDisplay: 0,
         uniChildrenToDisplay: 0,
+        sspnRelief: 0,
+        childcareRelief: 0,
         
         epfAndSocso: 4250,
         selfDependent: 9000,
@@ -89,7 +91,7 @@ class ParentApp extends Component {
 
             this.setState ( prevState => ({
                 totalChildrenRelief: (prevState.schoolChildren * 2000) + (prevState.collegeChildren * 2000) + (prevState.uniChildren * 8000) 
-                            + (prevState.disabledChildren * 6000) + (prevState.disabledUniChildren * 8000),
+                            + (prevState.disabledChildren * 6000) + (prevState.disabledUniChildren * 8000) + prevState.sspnRelief + prevState.childcareRelief,
 
                 schoolChildrenToDisplay: prevState.childrenAmount - prevState.collegeChildren - prevState.uniChildren,
                 collegeChildrenToDisplay: prevState.childrenAmount - prevState.schoolChildren - prevState.uniChildren,
