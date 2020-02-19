@@ -508,5 +508,6 @@ ul {
     margin-top: 20px;
 }
 
-
-
+.summaryLink{
+    color: white;
+}
