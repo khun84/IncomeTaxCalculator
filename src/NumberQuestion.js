@@ -2,6 +2,7 @@ import React, { useState, PropTypes } from 'react';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import classes from './app.module.css'
 
 export default function NumberQuestion(props) {
 
@@ -16,10 +17,10 @@ export default function NumberQuestion(props) {
     // const onNumberClickedBaseQuestion = (amount) =>{
     //     setSelected(amount)
     //     setMoreThanFive(false)
-        
+
     //     props.total(parseInt(amount), props.id, 0)
-        
-        
+
+
     //     // console.log(id)
     // }
 
@@ -28,8 +29,8 @@ export default function NumberQuestion(props) {
         setMoreThanFive(false)
         console.log('amount clicked : ' + amount)
         props.total(parseInt(amount), props.id, 0)
-        
-        
+
+
         // console.log(id)
     }
 
@@ -37,7 +38,7 @@ export default function NumberQuestion(props) {
         setSelected(event.target.value);
 
         props.total(event.target.value, props.id, 0)
-        
+
 
         // console.log(event.target.value)
     }
@@ -47,7 +48,7 @@ export default function NumberQuestion(props) {
 
 
         </ButtonGroup>
-    ) 
+    )
 
     const defaultButtonGroup = (
         <ButtonGroup color="primary" aria-label="outlined primary button group">
@@ -70,40 +71,40 @@ export default function NumberQuestion(props) {
             var elements = []
 
                 for (let i = 0; i < props.amountToDisplay + 1; i++) {
-                
+
                     elements.push(<Button variant={selected == i ? "contained" : ""} onClick={() => onNumberClicked(i)}>{i}</Button>)
                 }
-                //TODO add function to minus from children amount to be shown 
-    
+                //TODO add function to minus from children amount to be shown
+
             return (
                 <ButtonGroup color="primary" aria-label="outlined primary button group">
                     {elements}
                 </ButtonGroup>
-                
+
             )
-        }       
+        }
     }
-        
+
 
         return (
-            <div className="horizontalRow">
-                <div className="questionText question-bottom-border">
+            <div className={classes.horizontalRow}>
+                <div className={`${classes.questionText} ${classes.questionBottomBorder}`}>
                     <h4>{props.questionTitle}</h4>
-                    <div className="subtitles">
+                    <div className={classes.subtitles}>
                       {props.questionSubtitle}
                       &nbsp;
-                        <div className="capText">
+                        <div className={classes.capText}>
                           {props.capText}
                         </div>
                       </div>
                 </div>
 
-                <div className="padding-top-40 float-right">
-               
+                <div className={`${classes.paddingTop40} ${classes.floatRight}`}>
+
                 {getChildrenRemainingAmount()}
-               
-                {moreThanFive ? 
-                <div className="margin-top-10">
+
+                {moreThanFive ?
+                <div className={classes.marginTop10}>
                     <TextField
                         // fullWidth
                         label={props.label}
@@ -117,11 +118,11 @@ export default function NumberQuestion(props) {
                 </div>
                 :
                     null
-                } 
+                }
 
                 </div>
             </div>
         );
-    
+
 
 }

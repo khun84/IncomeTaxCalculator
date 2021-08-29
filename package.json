@@ -1,5 +1,5 @@
 {
-  "homepage": "http://adrianchincm.github.io/IncomeTaxCalculator",
+  "homepage": "%PUBLIC_URL%",
   "name": "create-react-app",
   "version": "4.0.0",
   "private": true,
@@ -9,12 +9,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:dev": "env-cmd -f .env.development npm run build",
+    "build:prod": "env-cmd -f .env.production npm run build"
   },
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.5.1",
     "clsx": "latest",
+    "env-cmd": "^10.1.0",
     "gh-pages": "^2.2.0",
     "react": "latest",
     "react-dom": "latest",

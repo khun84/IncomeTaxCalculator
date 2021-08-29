@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import TextField from '@material-ui/core/TextField';
 import NumberFormat from 'react-number-format';
+import classes from './app.module.css'
 
 function NumberFormatCustom(props) {
     const { inputRef, onChange, ...other } = props;
-  
+
     return (
       <NumberFormat
         {...other}
@@ -22,7 +23,7 @@ function NumberFormatCustom(props) {
       />
     );
   }
-  
+
 //   NumberFormatCustom.propTypes = {
 //     inputRef: PropTypes.func.isRequired,
 //     onChange: PropTypes.func.isRequired,
@@ -38,29 +39,29 @@ export default function MoneyTextQuestion(props) {
     const handleChange = name => event => {
         setValues({
           ...values,
-          [name]: event.target.value, 
+          [name]: event.target.value,
         });
 
         props.total(Number(event.target.value), props.id, props.cap)
       };
 
         return (
-            <div className="horizontalRow ">  
+            <div className={classes.horizontalRow}>
 
-                <div className="questionText question-bottom-border">
+                <div className={`${classes.questionText} ${classes.questionBottomBorder}`}>
                     <h4>{props.questionTitle}  {props.icons}</h4>
-                    <div className="subtitles">
+                    <div className={classes.subtitles}>
                       {props.questionSubtitle}
                       &nbsp;
-                        <div className="capText">
+                        <div className={classes.capText}>
                           {props.capText}
                         </div>
                       </div>
                 </div>
-                
-               
 
-                <div className="incomeInput">
+
+
+                <div className={classes.incomeInput}>
                 <TextField
                     fullWidth
                     label={props.label}
@@ -73,8 +74,8 @@ export default function MoneyTextQuestion(props) {
                     }}
                 />
                 </div>
-              
+
             </div>
-          
+
         );
 }

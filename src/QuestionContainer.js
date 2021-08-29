@@ -1,37 +1,38 @@
 import React, { Component, PropTypes } from 'react';
 import Section from './Section';
 import OptionalSection from './OptionalSection';
+import classes from './app.module.css'
 
 
 export default class QuestionContainer extends Component {
 
     constructor(props) {
         super(props);
-    } 
+    }
 
     render() {
         return (
             <div >
 
-                <div className="questionContainer">
-                <Section title="Income" 
+                <div className={classes.questionContainer}>
+                <Section title="Income"
                 totalIncome={this.props.totalIncome}
                 getGrossIncome={this.props.getGrossIncome}
                 getOtherIncome={this.props.getOtherIncome}
                 />
                 </div>
-                
-                <div className="questionContainerSubsequent">
-                <Section 
+
+                <div className={classes.questionContainerSubsequent}>
+                <Section
                 title="Individual Tax Relief"
                 getTotalRelief={this.props.getTotalRelief}
                 totalIndividualRelief={this.props.totalIndividualRelief}
                 />
                 </div>
 
-                <div className="questionContainerSubsequent">
+                <div className={classes.questionContainerSubsequent}>
                 <OptionalSection
-                questionTitle="Are you married?" 
+                questionTitle="Are you married?"
                 title="Married Tax Relief"
                 getTotalRelief={this.props.getTotalRelief}
                 totalRelief={this.props.totalMarriedRelief}
@@ -40,10 +41,10 @@ export default class QuestionContainer extends Component {
                 answer={this.props.married}
                 />
                 </div>
-                
-                <div className="questionContainerSubsequent">
+
+                <div className={classes.questionContainerSubsequent}>
                 <OptionalSection
-                questionTitle="Do you have Children?" 
+                questionTitle="Do you have Children?"
                 title="Children Tax Relief"
                 getTotalRelief={this.props.getTotalRelief}
                 totalRelief={this.props.totalChildrenRelief}
@@ -59,13 +60,13 @@ export default class QuestionContainer extends Component {
                 disabledChildren={this.props.disabledChildren}
                 />
                 </div>
-                
 
-                
+
+
 
             </div>
-          
+
         );
     }
-  
+
   }
